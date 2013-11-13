@@ -1,0 +1,35 @@
+.menuDown
+{
+    width: 100% !important;
+    height: 40px;
+    background: url('../img/footer-background.png') no-repeat top center;
+    padding-top: 17px;
+}
+
+.menuDown div
+{
+    width: 20%;
+    height: 40px;
+    float: left;
+    text-align:center;
+}
+
+.menuDown div.activo
+{
+    background: rgba(255,255,255,0.5) !important;
+}
+
+.menuDown div.optionDesc
+{
+    display: none;
+}
+
+.menuDown div a
+{
+    text-decoration: none;
+}
+
+.menuDown div a img
+{
+    width: 50%;
+}
