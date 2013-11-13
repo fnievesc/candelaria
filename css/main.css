@@ -3,7 +3,6 @@
     width: 100% !important;
     height: 40px;
     background: url('../img/footer-background.png') no-repeat top center;
-    padding-top: 17px;
 }
 
 .menuDown div
@@ -32,4 +31,11 @@
 .menuDown div a img
 {
     width: 50%;
+    max-width: 48px;
+}
+
+.ui-grid-a
+{
+    margin-bottom:20px;
+    margin-top: 5px;
 }

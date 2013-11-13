@@ -26,12 +26,16 @@ $(document).bind('pagechange',function(toPage, options){
     switch(url.filename)
     {
         case 'jn.html':
+        case 'vm.html':
+        case 'mm.html':
+        case 'sj.html':
+        case 'pi.html':
             window.mySwipe = $('#mySwipe').Swipe().data('Swipe');
             $( "#mySwipe" ).on( "swipeleft", function(){
                 mySwipe.next();
             } );
             $( "#mySwipe" ).on( "swiperight", function(){
-                mySwipe.next();
+                mySwipe.previous();
             } );
         break;
     }
