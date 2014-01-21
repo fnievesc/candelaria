@@ -33,4 +33,90 @@
     max-width: 100%;
 }
 
+.menuOption
+{
+    width: 40%;
+    margin: 5%;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    float: left;
+    opacity: 0.5;    
+}
+
+.menuOption span
+{
+    display:none;
+}
+
+.menuOption:hover
+{
+    opacity: 1;
+}
+
+.menuOption:hover span{
+    display: block;
+}
+
+#botonNoticias
+{
+    background-image: url('../images/31.jpg');
+}
+
+#botonGaleria
+{
+    background-image: url('../images/5.jpg');
+}
+
+#botonEventos
+{
+    background-image: url('../images/72.jpg');
+}
+
+#botonInfoParroquial
+{
+    background-image: url('../images/20.jpg');
+}
+
+#botonMas
+{
+    width: 90%;
+    margin: 0 5%;
+    height: 43px;
+    background: #000;
+    float: left;
+    background-image: url('../images/76.jpg');
+    background-position: top center;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+}
+
+#botonMas span{
+    display: none;
+}
+
+#botonMas:hover
+{
+    opacity: 1;
+}
+
+#botonMas:hover span{
+    display: block;
+}
+
+.ui-page-active
+{
+    background-image: url('../images/fondo.jpg') !important;
+    background-size: auto 100% !important;
+}
+
+.ui-bar-a, .ui-page-theme-a .ui-bar-inherit, html .ui-bar-a .ui-bar-inherit, html .ui-body-a .ui-bar-inherit, html body .ui-group-theme-a .ui-bar-inherit
+{
+    background: #FFF !important;
+}
+
+.app
+{
+    background: rgba(255,255,255,0.3);
+}
+
 /* END required styles */

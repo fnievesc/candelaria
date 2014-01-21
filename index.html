@@ -6,44 +6,36 @@
         <!--meta name="viewport" content="user-scalable=yes, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" /-->
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script type="text/javascript" src="lib/jquery-1.10.2.min.js"></script>
-        <script type="text/javascript" src="lib/jquery.mobile-1.3.2.min.js"></script>
+        <script type="text/javascript" src="lib/jQueryMobile/jquery.mobile-1.4.0.min.js"></script>
         <script type="text/javascript" src="js/swipe.js"></script>
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <link rel="stylesheet" type="text/css" href="css/main.css" />
-        <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.3.2.min.css" />
+        <link rel="stylesheet" type="text/css" href="lib/jQueryMobile/jquery.mobile.external-png-1.4.0.min.css" />
+        <link rel="stylesheet" type="text/css" href="lib/jQueryMobile/jquery.mobile.icons-1.4.0.min.css" />
+        <link rel="stylesheet" type="text/css" href="lib/jQueryMobile/jquery.mobile.inline-png-1.4.0.min.css" />
+        <link rel="stylesheet" type="text/css" href="lib/jQueryMobile/jquery.mobile.inline-svg-1.4.0.min.css" />
+        <link rel="stylesheet" type="text/css" href="lib/jQueryMobile/jquery.mobile.structure-1.4.0.min.css" />
+        <link rel="stylesheet" type="text/css" href="lib/jQueryMobile/jquery.mobile.theme-1.4.0.min.css" />
         <title>Candelaria</title>
     </head>
     <body>
-        <div class="app">
-            <div data-role="header" data-tap-toggle="false" data-position="fixed" class="header"><h1>Cristo Rey</h1></div>
-            <div class="body" data-role="content" id="bodyMapa" style="min-height:400px;">
-                <ul data-role="listview" data-inset="true">
-                    <li data-role="list-divider">Noticias</li>
-                    <li>
-                        <a href="noticia1.html" data-transition="slide">
-                           <img src="images/comis1.jpg">
-                           <h2>Comisiones de Honor</h2>
-                           <p>Inscripci&oacute;n en linea Jueves Santo 2014 disponibles desde ya en candelaria.org.gt</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="noticia2.html" data-transition="slide">
-                           <img src="images/comis2.jpg">
-                           <h2>Comisiones de Honor</h2>
-                           <p>Inscripci&oacute;n en linea Jueves Santo 2014 disponibles desde ya en candelaria.org.gt</p>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div data-role="footer" data-tap-toggle="false" data-position="fixed" class="menuDown">
-                <div><a href="index.html" data-transition="slide"><img src="images/noticias.png"/><div class="optionDesc">Noticias</div></a></div> 
-                <div><a href="galeria.html" data-transition="slide"><img src="images/galeria.png"/><div class="optionDesc">Galeria</div></a></div> 
-                <div><a href="pregon.html"><img src="images/pregon.png"/><div class="optionDesc">Inscripciones</div></a></div> 
-                <div><a href="parroquial.html" data-transition="slide"><img src="images/parroquial.png"/><div class="optionDesc">Parroquial</div></a></div> 
-                <div><a href="mas.html" data-transition="slide"><img src="images/mas.png"/><div class="optionDesc">M&aacute;s</div></a></div> 
+        <div data-role="page">
+            <div role="main" class="ui-content">
+                <div class="menuOption" id="botonNoticias" onClick="app.irA('noticias.html')"><span>Noticias</a></span></div>
+                <div class="menuOption" id="botonGaleria" onClick="app.irA('galeria.html')"><span>Galer&iacute;a</a></span></div>
+                <div class="menuOption" id="botonEventos" onClick="app.irA('pregon.html');"><span>Preg&oacute;n</span></div>
+                <div class="menuOption" id="botonInfoParroquial" onClick="app.irA('parroquial.html');"><span>Información Parroquial</span></div>
+                <div id="botonMas" onClick="app.irA('mas.html');"><span>M&aacute;s</span></div>
             </div>
         </div>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
     </body>
 </html>
+<script language="JavaScript">
+
+$(document).ready(function(){            
+    $('.menuOption').css('height',Math.round(($(window).height()-43)*0.4));
+});
+
+</script>

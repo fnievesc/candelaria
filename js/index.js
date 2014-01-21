@@ -17,6 +17,9 @@
  * under the License.
  */
 var app = {
+irA: function(url) {
+    $.mobile.navigate(url,{ transition: 'slideup', changeHash: false });
+    }
 };
 
 
@@ -40,3 +43,4 @@ $(document).bind('pagechange',function(toPage, options){
         break;
     }
 });
+
