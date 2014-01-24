@@ -35,12 +35,11 @@
 
 .menuOption
 {
-    width: 40%;
-    margin: 5%;
-    background-size: auto 100%;
-    background-repeat: no-repeat;
+    width: 80px;
+    height: 80px;
+    margin: 5px;
     float: left;
-    opacity: 0.5;    
+    background-size: 100% 100%;
 }
 
 .menuOption span
@@ -48,65 +47,70 @@
     display:none;
 }
 
-.menuOption:hover
-{
-    opacity: 1;
-}
-
-.menuOption:hover span{
-    display: block;
-}
-
 #botonNoticias
 {
-    background-image: url('../images/31.jpg');
+    background-image: url('../images/noticias.png');
 }
 
 #botonGaleria
 {
-    background-image: url('../images/5.jpg');
+    background-image: url('../images/galeria.png');
 }
 
 #botonEventos
 {
-    background-image: url('../images/72.jpg');
+    background-image: url('../images/pregon.png');
 }
 
 #botonInfoParroquial
 {
-    background-image: url('../images/20.jpg');
+    background-image: url('../images/parroquial.png');
 }
 
-#botonMas
+#botonAudios
 {
-    width: 90%;
-    margin: 0 5%;
-    height: 43px;
-    background: #000;
-    float: left;
-    background-image: url('../images/76.jpg');
-    background-position: top center;
-    background-repeat: no-repeat;
-    opacity: 0.5;
+    background-image: url('../images/audios.png');
 }
 
-#botonMas span{
-    display: none;
-}
-
-#botonMas:hover
+#botonHistoria
 {
-    opacity: 1;
+    background-image: url('../images/historia.png');
 }
 
-#botonMas:hover span{
-    display: block;
+#botonVideos
+{
+    background-image: url('../images/videos.png');
+}
+
+#botonFacebook
+{
+    background-image: url('../images/facebook.png');
+}
+
+#botonTwitter
+{
+    background-image: url('../images/twitter.png');
+}
+
+#botonInstagram
+{
+    background-image: url('../images/instagram.png');
+}
+
+#botonRecorrido
+{
+    background-image: url('../images/recorrido.png');
+}
+
+#botonCapilla
+{
+    background-image: url('../images/capilla360.png');
 }
 
 .ui-page-active
 {
     background-image: url('../images/fondo.jpg') !important;
-    background-size: auto 100% !important;
+    background-size: 100% auto !important;
 }
 
 .ui-bar-a, .ui-page-theme-a .ui-bar-inherit, html .ui-bar-a .ui-bar-inherit, html .ui-body-a .ui-bar-inherit, html body .ui-group-theme-a .ui-bar-inherit

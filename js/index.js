@@ -18,8 +18,13 @@
  */
 var app = {
 irA: function(url) {
-    $.mobile.navigate(url,{ transition: 'slideup', changeHash: false });
-    }
+        $.mobile.changePage(url,{ transition: 'slideup', changeHash: true });
+        //$( ":mobile-pagecontainer" ).pagecontainer( "change", url, { transition: "slideup" } );
+    },
+externo: function(url)
+{
+    window.open(url, '_system');
+}
 };
 
 
@@ -41,6 +46,25 @@ $(document).bind('pagechange',function(toPage, options){
                 mySwipe.previous();
             } );
         break;
+        case 'recorrido.html':
+            initMapa();
+        break;
     }
 });
+
+function initMapa()
+{
+    
+    $('#recorrido').css('height',$(window).height()-86);
+    $('#recorrido').css('width','100%');
+        navigator.geolocation.getCurrentPosition(function(position)
+        {
+            var myLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+            map = new google.maps.Map(document.getElementById('recorrido'), {
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                disableDefaultUI: true,
+                zoom: 15
+                });
+            });
+}
 
