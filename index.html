@@ -1,42 +1,57 @@
 <!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
 <html>
     <head>
-        <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <!--meta name="viewport" content="user-scalable=yes, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" /-->
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Asociaci&oacute;n de Devotos Cargadores</title>
+        <meta charset="x-iso-8859-11">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <script type="text/javascript" src="lib/jquery-1.10.2.min.js"></script>
         <script type="text/javascript" src="lib/jQueryMobile/jquery.mobile-1.4.0.min.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript" src="js/swipe.js"></script>
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <link rel="stylesheet" type="text/css" href="css/main.css" />
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script> 
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
         <link rel="stylesheet" type="text/css" href="lib/jQueryMobile/jquery.mobile.external-png-1.4.0.min.css" />
         <link rel="stylesheet" type="text/css" href="lib/jQueryMobile/jquery.mobile.icons-1.4.0.min.css" />
         <link rel="stylesheet" type="text/css" href="lib/jQueryMobile/jquery.mobile.inline-png-1.4.0.min.css" />
         <link rel="stylesheet" type="text/css" href="lib/jQueryMobile/jquery.mobile.inline-svg-1.4.0.min.css" />
         <link rel="stylesheet" type="text/css" href="lib/jQueryMobile/jquery.mobile.structure-1.4.0.min.css" />
         <link rel="stylesheet" type="text/css" href="lib/jQueryMobile/jquery.mobile.theme-1.4.0.min.css" />
-        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script> 
-        <title>Candelaria</title>
+        
     </head>
     <body>
-        <div class="paginaFNC" data-role="page">
-            <div role="main" class="ui-content">
-                <div class="menuOption" id="botonNoticias" onClick="app.irA('noticias.html')"><span>Noticias</a></span></div>
-                <div class="menuOption" id="botonGaleria" onClick="app.irA('galeria.html')"><span>Galer&iacute;a</a></span></div>
-                <div class="menuOption" id="botonEventos" onClick="app.irA('pregon.html');"><span>Preg&oacute;n</span></div>
-                <div class="menuOption" id="botonInfoParroquial" onClick="app.irA('parroquial.html');"><span>Información Parroquial</span></div>
-                <div class="menuOption" id="botonAudios" onClick="app.irA('audios.html');"><span>Audios</span></div>
-                <div class="menuOption" id="botonHistoria" onClick="app.irA('historia.html');"><span>Historia</span></div>
-                <div class="menuOption" id="botonFacebook" onClick="app.externo('facebook.html');"><span>Facebook</span></div>
-                <div class="menuOption" id="botonTwitter" onClick="app.externo('twitter.html');"><span>Twitter</span></div>
-                <div class="menuOption" id="botonInstagram" onClick="app.externo('instagram.html');"><span>Instagram</span></div>
-                <div class="menuOption" id="botonVideos" onClick="app.irA('videos.html');"><span>Videos</span></div>
-                <div class="menuOption" id="botonRecorrido" onClick="app.irA('recorrido.html');"><span>Recorrido</span></div>
-                <div class="menuOption" id="botonCapilla" onClick="app.irA('capilla.html');"><span>Visita a la capilla</span></div>
+        <div data-role="page">
+            <div id="headerHome" data-role="header"  data-theme="none" data-tap-toggle="false" data-position="fixed">
+                <div id="botonMas" class="noBackground"></div>
+                <div id='logo'></div>
+                <h1 style="white-space:normal; font-size: small">Asociaci&oacute;n de Devotos Cargadores</h1>
+            </div>
+            <div role="main">
+                <div id="mainPost">
+                    <div id="mainPostPhoto">
+                        <img id="mainPostPhotoImg" src="images/noticia3.jpg" />
+                    </div>
+                    <div id="mainPostTitle">Fiesta Patronal De Nuestra Se&ntilde;ora de Candelaria</div>
+                </div>
+                <div id="otherOptions">
+                    <div class="menuOption" id="botonNoticias" onClick="app.irA('noticias.html')"><span>Noticias</a></span></div>
+                    <div class="menuOption" id="botonGaleria" onClick="app.irA('galeria.html')"><span>Galer&iacute;a</a></span></div>
+                    <div class="menuOption" id="botonEventos" onClick="app.irA('pregon.html');"><span>Preg&oacute;n</span></div>
+                    <div class="menuOption" id="botonInfoParroquial" onClick="app.irA('parroquial.html');"><span>Informaci&oacute;n Parroquial</span></div>
+                    <div class="menuOption" id="botonAudios" onClick="app.irA('audios.html');"><span>Audios</span></div>
+                    <div class="menuOption" id="botonHistoria" onClick="app.irA('historia.html');"><span>Historia</span></div>
+                    <div class="menuOption" id="botonFacebook" onClick="app.externo('facebook.html');"><span>Facebook</span></div>
+                    <div class="menuOption" id="botonTwitter" onClick="app.externo('twitter.html');"><span>Twitter</span></div>
+                    <div class="menuOption" id="botonInstagram" onClick="app.externo('instagram.html');"><span>Instagram</span></div>
+                    <div class="menuOption" id="botonVideos" onClick="app.irA('videos.html');"><span>Videos</span></div>
+                    <div class="menuOption" id="botonRecorrido" onClick="app.irA('recorrido.html');"><span>Recorrido</span></div>
+                    <div class="menuOption" id="botonCapilla" onClick="app.irA('capilla.html');"><span>Visita a la capilla</span></div>
+                </div>
             </div>
         </div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
     </body>
 </html>

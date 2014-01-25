@@ -55,16 +55,19 @@ $(document).bind('pagechange',function(toPage, options){
 function initMapa()
 {
     
-    $('#recorrido').css('height',$(window).height()-86);
+    $('#recorrido').css('height',$(window).height()-68);
     $('#recorrido').css('width','100%');
         navigator.geolocation.getCurrentPosition(function(position)
         {
-            var myLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+            var myLocation = new google.maps.LatLng(14.647695,-90.502769);
             map = new google.maps.Map(document.getElementById('recorrido'), {
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
                 disableDefaultUI: true,
                 zoom: 15
                 });
+                map.setCenter(myLocation);
+                map.setZoom(18);
             });
+
 }
 
