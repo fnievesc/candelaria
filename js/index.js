@@ -98,3 +98,29 @@ function initMapa()
               });
 }
 
+function initializePhoneGap( success, failure ) {
+    var timer = window.setInterval( function () {
+        if ( window.device ) {
+            window.clearInterval( timer );
+            success();
+        };
+    }, 100 );
+    window.setTimeout( function () { //failsafe
+        if ( !window.device ) { //phonegap failed
+            window.clearInterval( timer );
+            failure();
+        };
+    }, 5000 ); //5 seconds
+};
+
+
+window.onload = function () {
+    initializePhoneGap( function success() {
+        //start app
+        console.write('done');
+    }, function failure() {
+        //phonegap failed 
+        alert('Error loading system')
+    } );
+
+};
