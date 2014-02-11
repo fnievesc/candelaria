@@ -13,7 +13,8 @@
     </author>
     <feature name="http://api.phonegap.com/1.0/device" />
     <feature name="http://api.phonegap.com/1.0/notification"/>
-    
+    <feature name="http://api.phonegap.com/1.0/geolocation"/>
+
     <gap:platform name="ios" />
     <gap:platform name="android" />
     
