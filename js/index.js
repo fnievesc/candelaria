@@ -55,7 +55,7 @@ $(document).bind('pagechange',function(toPage, options){
 function initMapa()
 {
     alert('initMapa');
-    $('#recorrido').css('height',$(window).height()-68);
+    $('#recorrido').css('height',$(document).height()-68);
     $('#recorrido').css('width','100%');
     alert(google);
     var primerTramoRuta = new google.maps.Polyline({
