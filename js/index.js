@@ -82,8 +82,6 @@ function initMapa()
     strokeWeight: 2
   });
   
-        navigator.geolocation.getCurrentPosition(function(position)
-        {
             var myLocation = new google.maps.LatLng(14.647695,-90.502769);
             map = new google.maps.Map(document.getElementById('recorrido'), {
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
@@ -95,6 +93,6 @@ function initMapa()
                 primerTramoRuta.setMap(map);
                 nuevoTramoRuta.setMap(map);
                 ultimoTramoRuta.setMap(map);
-              });
+
 }
 
