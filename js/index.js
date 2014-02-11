@@ -81,8 +81,9 @@ function initMapa()
     strokeOpacity: 1.0,
     strokeWeight: 2
   });
-  
+  alert('despues de tramos');
             var myLocation = new google.maps.LatLng(14.647695,-90.502769);
+            alert(myLocation);
             map = new google.maps.Map(document.getElementById('recorrido'), {
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
                 disableDefaultUI: true,
