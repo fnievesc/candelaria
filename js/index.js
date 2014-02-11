@@ -54,10 +54,10 @@ $(document).bind('pagechange',function(toPage, options){
 
 function initMapa()
 {
-    alert('initMapa');
-    $('#recorrido').css('height',$(document).height()-68);
+    
+    $('#recorrido').css('height',$(window).height()-68);
     $('#recorrido').css('width','100%');
-    alert(google);
+    
     var primerTramoRuta = new google.maps.Polyline({
     path: primerTramo,
     geodesic: true,
@@ -81,20 +81,20 @@ function initMapa()
     strokeOpacity: 1.0,
     strokeWeight: 2
   });
-  alert('despues de tramos');
+  
+        navigator.geolocation.getCurrentPosition(function(position)
+        {
             var myLocation = new google.maps.LatLng(14.647695,-90.502769);
-            alert(myLocation);
             map = new google.maps.Map(document.getElementById('recorrido'), {
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
                 disableDefaultUI: true,
                 zoom: 15
                 });
-                alert(map);
                 map.setCenter(myLocation);
                 map.setZoom(18);
                 primerTramoRuta.setMap(map);
                 nuevoTramoRuta.setMap(map);
                 ultimoTramoRuta.setMap(map);
-
+              });
 }
 
