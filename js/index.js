@@ -57,6 +57,31 @@ function initMapa()
     
     $('#recorrido').css('height',$(window).height()-68);
     $('#recorrido').css('width','100%');
+    
+    var primerTramoRuta = new google.maps.Polyline({
+    path: primerTramo,
+    geodesic: true,
+    strokeColor: '#FF0000',
+    strokeOpacity: 1.0,
+    strokeWeight: 2
+  });
+  
+  var nuevoTramoRuta = new google.maps.Polyline({
+    path: nuevoTramo,
+    geodesic: true,
+    strokeColor: '#000000',
+    strokeOpacity: 1.0,
+    strokeWeight: 2
+  });
+  
+  var ultimoTramoRuta = new google.maps.Polyline({
+    path: ultimoTramo,
+    geodesic: true,
+    strokeColor: '#FF0000',
+    strokeOpacity: 1.0,
+    strokeWeight: 2
+  });
+  
         navigator.geolocation.getCurrentPosition(function(position)
         {
             var myLocation = new google.maps.LatLng(14.647695,-90.502769);
@@ -67,7 +92,9 @@ function initMapa()
                 });
                 map.setCenter(myLocation);
                 map.setZoom(18);
-            });
-
+                primerTramoRuta.setMap(map);
+                nuevoTramoRuta.setMap(map);
+                ultimoTramoRuta.setMap(map);
+              });
 }
 

@@ -1,0 +1,7 @@
+//wcjxAthmgPo@zGWnDnIj@fAcM
+
+nuevoTramo = [new google.maps.LatLng(14.638840921839105,-90.51291346549988),
+new google.maps.LatLng(14.639084864800779,-90.51432967185974),
+new google.maps.LatLng(14.639199050774724,-90.51520943641663),
+new google.maps.LatLng(14.637517396786405,-90.51543474197388),
+new google.maps.LatLng(14.637164455423726,-90.51317095756531)];
