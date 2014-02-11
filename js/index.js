@@ -54,7 +54,7 @@ $(document).bind('pagechange',function(toPage, options){
 
 function initMapa()
 {
-    
+    alert('initMapa');
     $('#recorrido').css('height',$(window).height()-68);
     $('#recorrido').css('width','100%');
     
@@ -88,6 +88,7 @@ function initMapa()
                 disableDefaultUI: true,
                 zoom: 15
                 });
+                alert(map);
                 map.setCenter(myLocation);
                 map.setZoom(18);
                 primerTramoRuta.setMap(map);
