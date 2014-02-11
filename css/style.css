@@ -58,7 +58,14 @@
             
             #botonMasMain
             {
-                background-image:url('../images/mas.png');
+                background-image: url('../images/mas.png');
+            }
+            
+            #botonMas
+            {
+                height: 45px;
+                width: 40px;
+                float: left;
             }
             
             #logo
@@ -73,7 +80,6 @@
             
             #mainPost
             {
-                overflow: hidden;
                 width: 360px;
                 margin: 0 auto;
             }
