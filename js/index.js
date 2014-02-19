@@ -49,6 +49,12 @@ $(document).bind('pagechange',function(toPage, options){
         case 'recorrido.html':
             initMapa();
         break;
+        case 'noticia4.html':
+           $('.carousel').jCarouselLite({
+                auto: 800,
+                speed: 1000
+            }); 
+        break;
     }
 });
 
