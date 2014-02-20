@@ -38,7 +38,7 @@ $(document).bind('pagechange',function(toPage, options){
         case 'mm.html':
         case 'sj.html':
         case 'pi.html':
-            $('.carousel ul li img').css('width',($(window).width()/90)*100)
+            $('.carousel ul li img').css('width',($(document).width()*90)/100)
             $('.carousel').jCarouselLite({
                 visible: 1,
                 auto: 3000,
