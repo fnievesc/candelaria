@@ -86,7 +86,7 @@
             
             #otherOptions
             {
-                width: 360px;
+                width: 95%;
                 margin: 0 auto;
             }
             
@@ -187,4 +187,9 @@
             {
                 padding: 0 !important;
                 margin: 0 !important;
+            }
+            
+            .carousel ul li img
+            {
+                height: auto;
             }

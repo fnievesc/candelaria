@@ -38,13 +38,12 @@ $(document).bind('pagechange',function(toPage, options){
         case 'mm.html':
         case 'sj.html':
         case 'pi.html':
-            window.mySwipe = $('#mySwipe').Swipe().data('Swipe');
-            $( "#mySwipe" ).on( "swipeleft", function(){
-                mySwipe.next();
-            } );
-            $( "#mySwipe" ).on( "swiperight", function(){
-                mySwipe.previous();
-            } );
+            $('.carousel ul li img').css('width',($(window).width()/90)*100)
+            $('.carousel').jCarouselLite({
+                visible: 1,
+                auto: 3000,
+                speed: 800
+            });
         break;
         case 'recorrido.html':
             initMapa();
@@ -67,7 +66,7 @@ function getNoticias()
         noticias = data.noticias
         for(i=noticias.length-1;i>=0;i--)
         {
-            listHTML += '<li><a href="#" data-transition="slide"><img src="http://216.120.237.30/~frajonic/candelaria/'+noticias[i].imagen[0].url+'"><h2>'+noticias[i].titulo+'</h2><p>'+noticias[i].texto+'</p></a></li>';
+            listHTML += '<li><a href="noticia.html" data-transition="slide" onClick="noticiaid='+i+'"><img src="http://216.120.237.30/~frajonic/candelaria/'+noticias[i].imagen[0].url+'"><h2>'+noticias[i].titulo+'</h2><p>'+noticias[i].texto+'</p></a></li>';
         }
         listHTML += '</ul>';
         $('#noticiasHolder').html(listHTML).trigger('create');
