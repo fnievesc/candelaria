@@ -16,9 +16,10 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+var noticiaid = 0;
 var app = {
 irA: function(url) {
-        $.mobile.changePage(url,{ transition: 'slideup', changeHash: true });
+        $.mobile.changePage(url,{ transition: 'flow', changeHash: true });
         //$( ":mobile-pagecontainer" ).pagecontainer( "change", url, { transition: "slideup" } );
     },
 externo: function(url)
@@ -51,8 +52,26 @@ $(document).bind('pagechange',function(toPage, options){
         case 'noticias.html':
             getNoticias();
         break;
+        case 'noticia.html':
+            getNoticia();
+        break;
+        case 'pregon.html':
+            getPregon();
+        break;
     }
 });
+
+function getPregon()
+{
+    
+    $.ajax({url:'http://216.120.237.30/~frajonic/candelaria/movilAPI/pregon.php',
+            type:'POST',
+            dataType:'jsonp',
+            crossDomain:true
+}).done(function(data){
+        $('#bodyPregon').html(data.content).trigger('create');
+    }).fail(function(){alert('error')});
+}
 
 function getNoticias()
 {
@@ -71,13 +90,39 @@ function getNoticias()
         listHTML += '</ul>';
         $('#noticiasHolder').html(listHTML).trigger('create');
     }).fail(function(){alert('error')});
-    
-    
-    
-    
-    
 }
 
+function getNoticia()
+{
+    
+    $.ajax({url:'http://216.120.237.30/~frajonic/candelaria/movilAPI/noticias.php',
+            type:'POST',
+            data: {noticia: noticiaid},
+            dataType:'jsonp',
+            crossDomain:true
+}).done(function(data){
+        noticias = data.noticias;
+        i = 0;
+        listHTML = '<h2 class="ff_intro ff_ifirst">'+noticias[i].titulo+'</h2>';
+        if(noticias[i].imagen.length == 1)
+            listHTML += '<img src="http://216.120.237.30/~frajonic/candelaria/'+noticias[i].imagen[0].url+'" style="width:90%">';
+        else
+        {
+            listHTML += '<div class="carousel"><ul>';
+            for(j=0;j<noticias[i].imagen.length;j++)
+            {
+                listHTML += '<li><img src="http://216.120.237.30/~frajonic/candelaria/'+noticias[i].imagen[j].url+'" style="height:200px;width: auto;"/></li>';
+            }
+            listHTML += '</ul></div>';
+        }
+        listHTML += '<p>'+noticias[i].texto+'</p>';
+        $('#noticiaHolder').html(listHTML).trigger('create');
+            $('.carousel').jCarouselLite({
+                visible: 1,
+                auto: 3000,
+                speed: 800
+            });    }).fail(function(){alert('error obteniendo noticia')});
+}
 
 function initMapa()
 {
