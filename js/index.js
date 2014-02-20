@@ -49,14 +49,36 @@ $(document).bind('pagechange',function(toPage, options){
         case 'recorrido.html':
             initMapa();
         break;
-        case 'noticia4.html':
-           $('.carousel').jCarouselLite({
-                auto: 800,
-                speed: 1000
-            }); 
+        case 'noticias.html':
+            getNoticias();
         break;
     }
 });
+
+function getNoticias()
+{
+    
+    $.ajax({url:'http://216.120.237.30/~frajonic/candelaria/movilAPI/noticias.php',
+            type:'POST',
+            dataType:'jsonp',
+            crossDomain:true
+}).done(function(data){
+        listHTML = '<ul data-role="listview" data-inset="true"><li data-role="list-divider">Noticias</li>';    
+        noticias = data.noticias
+        for(i=noticias.length-1;i>=0;i--)
+        {
+            listHTML += '<li><a href="#" data-transition="slide"><img src="http://216.120.237.30/~frajonic/candelaria/'+noticias[i].imagen[0].url+'"><h2>'+noticias[i].titulo+'</h2><p>'+noticias[i].texto+'</p></a></li>';
+        }
+        listHTML += '</ul>';
+        $('#noticiasHolder').html(listHTML).trigger('create');
+    }).fail(function(){alert('error')});
+    
+    
+    
+    
+    
+}
+
 
 function initMapa()
 {
@@ -126,7 +148,7 @@ window.onload = function () {
         console.write('done');
     }, function failure() {
         //phonegap failed 
-        alert('Error loading system')
+        //alert('Error loading system')
     } );
 
 };
