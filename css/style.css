@@ -68,16 +68,24 @@
                 float: left;
             }
             
-            #logo
+            #logoCR
             {
                 width: 68px;
                 height: 68px;
-                background-image: url('../images/logo.png');
+                background-image: url('../images/logoCR.png');
                 background-repeat: no-repeat;
-                background-size: 90% auto;
                 float: left;
             }
             
+            #logoSV
+            {
+                width: 68px;
+                height: 68px;
+                background-image: url('../images/logoSV.png');
+                background-repeat: no-repeat;
+                float: left;
+            }
+
             #mainPost
             {
                 width: 95%;
