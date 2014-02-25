@@ -86,7 +86,7 @@
             
             #otherOptions
             {
-                width: 95%;
+                width: 280px;
                 margin: 0 auto;
             }
             
@@ -206,4 +206,14 @@
             {
                 width: 90%;
                 margin: 0 5%;
+            }
+            
+            .enVivo
+            {
+                display: none;
+            }
+            
+            #bodyPregon strong
+            {
+                font-weight: bold;
             }
