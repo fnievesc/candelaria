@@ -225,3 +225,21 @@
             {
                 font-weight: bold;
             }
+            
+            #headerInner
+            {
+                width: 280px;
+                margin: 0 auto;
+                overflow: hidden;
+            }
+            
+            .ui-block-a .ui-bar, .ui-block-b .ui-bar
+            {
+                color: #000 !important;
+                text-shadow: none;
+                font-weight: normal;
+            }
+            
+            .ui-block-a strong{
+                font-weight: bold;
+            }
