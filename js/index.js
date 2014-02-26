@@ -161,13 +161,23 @@ function initMapa()
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
                 disableDefaultUI: true,
                 zoom: 15
-                });
-                map.setCenter(myLocation);
-                map.setZoom(18);
-                primerTramoRuta.setMap(map);
-                nuevoTramoRuta.setMap(map);
-                ultimoTramoRuta.setMap(map);
-              });
+            });
+            map.setCenter(myLocation);
+            map.setZoom(18);
+            primerTramoRuta.setMap(map);
+            nuevoTramoRuta.setMap(map);
+            ultimoTramoRuta.setMap(map);
+            miPosActual = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+            marker = new google.maps.Marker({
+                "position": miPosActual,
+                "map": map
+            });
+            
+            bounds = map.getBounds();
+            bounds.extend(miPosActual);
+            
+            map.fitBounds(bounds);
+        });
 }
 
 function initializePhoneGap( success, failure ) {
