@@ -192,9 +192,22 @@ function initMapa()
                         "icon": (puntosRef.puntosderef[punto].image=="")?'images/Pelicano-Cruz.png':puntosRef.puntosderef[punto].image,
                         "map": map
                     });                
+                    var myTemplate = '<h1>'+puntosRef.puntosderef[punto].title+'<h1><p>Horario: '+(puntosRef.puntosderef[punto].horario=="00:00"?"No Disponible":puntosRef.puntosderef[punto].horario)+'</p>';
+                    var infowindow = new google.maps.InfoWindow({
+                        content: myTemplate 
+                    });
+
+                    google.maps.event.addListener(marker, 'click', makeInfoWindowListener(infowindow,map,marker));
                 }
              }).fail(function(){alert('error')});
     });
+}
+
+function makeInfoWindowListener(infowindow, map, marker)
+{
+    return function() {
+        infowindow.open(map,marker);
+  };  
 }
 
 function initializePhoneGap( success, failure ) {
