@@ -129,7 +129,7 @@ function initMapa()
     
     $('#recorrido').css('height',$(window).height()-68);
     $('#recorrido').css('width','100%');
-    
+
     var primerTramoRuta = new google.maps.Polyline({
     path: primerTramo,
     geodesic: true,
@@ -177,7 +177,24 @@ function initMapa()
             bounds.extend(miPosActual);
             
             map.fitBounds(bounds);
-        });
+
+            $.ajax({url:'http://216.120.237.30/~frajonic/candelaria/movilAPI/puntosRef.php',
+                     type:'POST',
+                     dataType:'jsonp',
+                     crossDomain:true
+         }).done(function(data){
+                puntosRef = data;
+                for(punto=0;punto<puntosRef.puntosderef.length;punto++)
+                {
+                    marker = new google.maps.Marker({
+                        "position": new google.maps.LatLng(puntosRef.puntosderef[punto].latitude,puntosRef.puntosderef[punto].longitude),
+                        "title": puntosRef.puntosderef[punto].title,
+                        "icon": (puntosRef.puntosderef[punto].image=="")?'images/Pelicano-Cruz.png':puntosRef.puntosderef[punto].image,
+                        "map": map
+                    });                
+                }
+             }).fail(function(){alert('error')});
+    });
 }
 
 function initializePhoneGap( success, failure ) {
