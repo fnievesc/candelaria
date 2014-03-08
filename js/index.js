@@ -63,19 +63,21 @@ $(document).bind('pagechange',function(toPage, options){
 
 function getPregon()
 {
-    
+    $.mobile.loading('show') 
     $.ajax({url:'http://216.120.237.30/~frajonic/candelaria/movilAPI/pregon.php',
             type:'POST',
             dataType:'jsonp',
             crossDomain:true
 }).done(function(data){
         $('#bodyPregon').html(data.content).trigger('create');
-    }).fail(function(){alert('error')});
+	    $.mobile.loading('hide'); 
+    }).fail(function(){alert('error');    $.mobile.loading('hide'); 
+});
 }
 
 function getNoticias()
 {
-    
+    $.mobile.loading('show') 
     $.ajax({url:'http://216.120.237.30/~frajonic/candelaria/movilAPI/noticias.php',
             type:'POST',
             dataType:'jsonp',
@@ -89,12 +91,13 @@ function getNoticias()
         }
         listHTML += '</ul>';
         $('#noticiasHolder').html(listHTML).trigger('create');
-    }).fail(function(){alert('error')});
+    	$.mobile.loading('hide') 
+    }).fail(function(){alert('error');    $.mobile.loading('hide') });
 }
 
 function getNoticia()
 {
-    
+    $.mobile.loading('show') 
     $.ajax({url:'http://216.120.237.30/~frajonic/candelaria/movilAPI/noticias.php',
             type:'POST',
             data: {noticia: noticiaid},
@@ -121,12 +124,18 @@ function getNoticia()
                 visible: 1,
                 auto: 3000,
                 speed: 800
-            });    }).fail(function(){alert('error obteniendo noticia')});
+            });    
+			$.mobile.loading('hide') 
+        }).fail(function()
+    	{
+			alert('error obteniendo noticia');
+			$.mobile.loading('hide') 
+		});
 }
 
 function initMapa()
 {
-    
+    $.mobile.loading('show') 
     $('#recorrido').css('height',$(window).height()-68);
     $('#recorrido').css('width','100%');
 
@@ -198,6 +207,7 @@ function initMapa()
                     });
 
                     google.maps.event.addListener(marker, 'click', makeInfoWindowListener(infowindow,map,marker));
+				    $.mobile.loading('hide') 
                 }
              }).fail(function(){alert('error')});
     });
