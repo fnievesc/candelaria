@@ -9,7 +9,6 @@ and open the template in the editor.
         <title>Asociaci&oacute;n de Devotos Cargadores</title>
         <meta charset="x-iso-8859-11">
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
-        <script type="text/javascript" src='cordova.js'></script>
         <script type="text/javascript" src="lib/jquery-1.10.2.min.js"></script>
         <script type="text/javascript" src="lib/jQueryMobile/jquery.mobile-1.4.0.min.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
@@ -18,20 +17,22 @@ and open the template in the editor.
         <script type="text/javascript" src="js/primerTramo.js"></script>
         <script type="text/javascript" src="js/nuevoTramo.js"></script>
         <script type="text/javascript" src="js/ultimoTramo.js"></script>
-        <script type="text/javascript" src="js/jcarousellite_1.0.1.min.js"></script>
         <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <link rel="stylesheet" type="text/css" href="lib/themes/candelaria.min.css" />
+        <link rel="stylesheet" type="text/css" href="lib/themes/jquery.mobile.icons.min" />
         <link rel="stylesheet" type="text/css" href="lib/jQueryMobile/jquery.mobile.external-png-1.4.0.min.css" />
         <link rel="stylesheet" type="text/css" href="lib/jQueryMobile/jquery.mobile.icons-1.4.0.min.css" />
         <link rel="stylesheet" type="text/css" href="lib/jQueryMobile/jquery.mobile.inline-png-1.4.0.min.css" />
         <link rel="stylesheet" type="text/css" href="lib/jQueryMobile/jquery.mobile.inline-svg-1.4.0.min.css" />
         <link rel="stylesheet" type="text/css" href="lib/jQueryMobile/jquery.mobile.structure-1.4.0.min.css" />
-        <link rel="stylesheet" type="text/css" href="lib/jQueryMobile/jquery.mobile.theme-1.4.0.min.css" />
+        <link rel="stylesheet" type="text/css" href="lib/jQueryMobile/jquery.mobile.theme-1.4.0.min.css" /-->
         
     </head>
     <body>
         <div data-role="page">
-                        <div data-role="panel" id="mypanel" data-animate="false">
+            <div data-role="panel" id="mypanel">
                 <ul data-role="listview" data-inset="false" data-theme="b">
+                    <li><a href="index.html"><img src="images/logoCR.png" alt="Bienvenida" style="width:16px;" class="ui-li-icon"/>Bienvenida</a></li>
                     <li><a href="noticias.html"><img src="images/noticias.png" alt="Noticias" style="width:16px;" class="ui-li-icon"/>Noticias</a></li>
                     <li><a href="galeria.html"><img src="images/galeria.png" alt="Galeria" style="width:16px;" class="ui-li-icon"/>Galer&iacute;a</a></li>
                     <li><a href="pregon.html"><img src="images/pregon.png" alt="Preg&oacute;n" style="width:16px;" class="ui-li-icon"/>Preg&oacute;n</a></li>
@@ -47,35 +48,20 @@ and open the template in the editor.
                 </ul>
             </div>
             <div id="headerHome" data-role="header"  data-theme="b" data-tap-toggle="false" data-position="fixed">
+                <div id="botonMas">
+                    <a href="#mypanel" data-theme="none" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all">No text</a>
+                </div>
                 <div id="headerInner">
                     <div id="logoCR"></div>
-                    <h1 style="white-space:normal; font-size: small;width:140px;float:left;margin:10px 0;text-align:center">T&uacute; tienes palabras de vida eterna 2014</h1>
+                    <h1 style="white-space:normal; font-size: small;width:140px;float:left;margin:10px 0;text-align:center">
+                        Recorrido Jueves Santo 18 de Abril
+                    </h1>
                     <div id="logoSV"></div>
                 </div>
             </div>
-            <div role="main">
-                <div id="mainPost">
-                    <div id="mainPostPhoto">
-                        <img id="mainPostPhotoImg" src="images/noticia4.jpg" />
-                    </div>
-                    <div id="mainPostTitle">Bienvenidos a la aplicaci&oacute;n oficial de la Asociaci&oacute;n de Devotos Cargadores de la Consagrada Imagen de Jes&uacute;s Nazareno de Candelaria y Sant&iacute;sima Virgen de Dolores de la parroquia de nuestra se&ntilde;ora de Candelaria.</div>
-                </div>
-                <div id="otherOptions">
-                    <!-- div class="menuOption" id="botonNoticias" onClick="app.irA('noticias.html')"><span>Noticias</a></span></div -->
-                    <div class="menuOption" id="botonGaleria" onClick="app.irA('galeria.html')"><span>Galer&iacute;a</a></span></div>
-                    <div class="menuOption" id="botonEventos" onClick="app.irA('pregon.html');"><span>Preg&oacute;n</span></div>
-                    <div class="menuOption" id="botonInfoParroquial" onClick="app.irA('parroquial.html');"><span>Informaci&oacute;n Parroquial</span></div>
-                    <div class="menuOption" id="botonMasMain" onClick="$('#mypanel').panel('open')"><span>Informaci&oacute;n Parroquial</span></div>
-                    <!--div class="menuOption" id="botonAudios" onClick="app.irA('audios.html');"><span>Audios</span></div>
-                    <div class="menuOption" id="botonHistoria" onClick="app.irA('historia.html');"><span>Historia</span></div>
-                    <div class="menuOption" id="botonFacebook" onClick="app.externo('facebook.html');"><span>Facebook</span></div>
-                    <div class="menuOption" id="botonTwitter" onClick="app.externo('twitter.html');"><span>Twitter</span></div>
-                    <div class="menuOption" id="botonInstagram" onClick="app.externo('instagram.html');"><span>Instagram</span></div>
-                    <div class="menuOption" id="botonVideos" onClick="app.irA('videos.html');"><span>Videos</span></div>
-                    <div class="menuOption" id="botonRecorrido" onClick="app.irA('recorrido.html');"><span>Recorrido</span></div>
-                    <div class="menuOption" id="botonCapilla" onClick="app.irA('capilla.html');"><span>Visita a la capilla</span></div-->
-                </div>
+            <div class="ui-content" data-role="main" id="bodyMapa" style="min-height:400px;">
+                <div id="recorrido"></div>
             </div>
-        </div>
+        </div>    
     </body>
-</html>
+</html>            

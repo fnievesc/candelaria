@@ -46,7 +46,7 @@ $(document).bind('pagechange',function(toPage, options){
                 speed: 800
             });
         break;
-        case 'recorrido.html':
+        case 'juevesSanto.html':
             initMapa();
         break;
         case 'noticias.html':
@@ -58,13 +58,17 @@ $(document).bind('pagechange',function(toPage, options){
         case 'pregon.html':
             getPregon();
         break;
+        case 'audios.html':
+        	getMarchas();
+        	getProgramas();
+    	break;
     }
 });
 
 function getPregon()
 {
     $.mobile.loading('show') 
-    $.ajax({url:'http://216.120.237.30/~frajonic/candelaria/movilAPI/pregon.php',
+    $.ajax({url:'http://216.120.237.30/~candelar/movilAPI/pregon.php',
             type:'POST',
             dataType:'jsonp',
             crossDomain:true
@@ -75,10 +79,48 @@ function getPregon()
 });
 }
 
+function getMarchas()
+{
+	if($('#marchas').html()=='')
+	{
+	    $.mobile.loading('show');
+	    $.ajax({url:'http://216.120.237.30/~candelar/movilAPI/marchas.php',
+	            type:'POST',
+	            dataType:'jsonp',
+	            crossDomain:true
+	}).done(function(data){
+	        $('#marchas').html(data.marchas).trigger('create');
+		    $.mobile.loading('hide'); 
+	    }).fail(function(){alert('error');    
+	    	$.mobile.loading('hide'); 
+		});
+	}
+}
+
+function getProgramas()
+{
+	if($('#grabados').html()=='')
+	{
+	    $.mobile.loading('show');
+	    $.ajax({url:'http://216.120.237.30/~candelar/movilAPI/programas.php',
+	            type:'POST',
+	            dataType:'jsonp',
+	            crossDomain:true
+	}).done(function(data){
+	        $('#bodyPregon').html(data.content).trigger('create');
+		    $.mobile.loading('hide'); 
+	    }).fail(function(){alert('error');    
+		    $.mobile.loading('hide'); 
+		});
+	}
+}
+
+
+
 function getNoticias()
 {
     $.mobile.loading('show') 
-    $.ajax({url:'http://216.120.237.30/~frajonic/candelaria/movilAPI/noticias.php',
+    $.ajax({url:'http://216.120.237.30/~candelar/movilAPI/noticias.php',
             type:'POST',
             dataType:'jsonp',
             crossDomain:true
@@ -98,7 +140,7 @@ function getNoticias()
 function getNoticia()
 {
     $.mobile.loading('show') 
-    $.ajax({url:'http://216.120.237.30/~frajonic/candelaria/movilAPI/noticias.php',
+    $.ajax({url:'http://216.120.237.30/~candelar/movilAPI/noticias.php',
             type:'POST',
             data: {noticia: noticiaid},
             dataType:'jsonp',
@@ -187,7 +229,7 @@ function initMapa()
             
             map.fitBounds(bounds);
 
-            $.ajax({url:'http://216.120.237.30/~frajonic/candelaria/movilAPI/puntosRef.php',
+            $.ajax({url:'http://216.120.237.30/~candelar/movilAPI/puntosRef.php',
                      type:'POST',
                      dataType:'jsonp',
                      crossDomain:true
