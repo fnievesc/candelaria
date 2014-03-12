@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="net.frajonico.candelaria" 
-        version="3.5.20" 
+        version="4.6.21" 
         versionCode="11"
         xmlns="http://www.w3.org/ns/widgets" 
         xmlns:gap="http://phonegap.com/ns/1.0">
@@ -66,4 +66,7 @@
     <access origin="https://googleapis.com" subdomains="true" />
     <access origin="https://maps.gstatic.com" />
     <content src="index.html" />
+
+	<gap:plugin name="com.phonegap.plugins.pushplugin" version="2.1.1" />
+	
 </widget>

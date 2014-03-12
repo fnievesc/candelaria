@@ -239,8 +239,29 @@ function initializePhoneGap( success, failure ) {
 window.onload = function () {
     initializePhoneGap( function success() {
         //start app
-        console.write('done');
-    }, function failure() {
+        pushNotification = window.plugins.pushNotification;
+		if ( device.platform == 'android' || device.platform == 'Android' )
+		{
+		    pushNotification.register(
+		        successHandler,
+		        errorHandler, {
+		            "senderID":"159481896421",
+		            "ecb":"onNotificationGCM"
+		        });
+		}
+		else
+		{
+		    pushNotification.register(
+		        tokenHandler,
+		        errorHandler, {
+		            "badge":"true",
+		            "sound":"true",
+		            "alert":"true",
+		            "ecb":"onNotificationAPN"
+		        });
+		}        
+	},
+	function failure() {
         //phonegap failed 
         //alert('Error loading system')
     } );
