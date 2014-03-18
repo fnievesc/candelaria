@@ -243,3 +243,29 @@
             .ui-block-a strong{
                 font-weight: bold;
             }
+            
+			#bodyAudios .ui-content
+			{
+				padding: 40px 0 0 !important;
+			}	
+			
+			#bodyProcesion .ui-content
+			{
+				padding: 52px 0 0 !important;
+			}
+
+			#bodyProcesion #recomendaciones p
+			{
+				margin: 20px 0;
+			}
+			
+			#bodyProcesion #recomendaciones strong
+			{
+				font-weight: bold;
+			}
+			
+			#bodyProcesion #recomendaciones h2
+			{
+				margin-top: 20px;
+				font-size: 150%;
+			}

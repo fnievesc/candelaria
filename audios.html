@@ -25,7 +25,7 @@ and open the template in the editor.
         
     </head>
     <body>
-        <div data-role="page">
+        <div data-role="page" id="bodyAudios">
             <div data-role="panel" id="mypanel">
                 <ul data-role="listview" data-inset="false" data-theme="b">
                     <li><a href="index.html"><img src="images/logoCR.png" alt="Bienvenida" style="width:16px;" class="ui-li-icon"/>Bienvenida</a></li>
@@ -39,33 +39,31 @@ and open the template in the editor.
                     <li><a href="http://www.twitter.com/CristoReyCande" onclick="window.open(this.href,'_system'); return false;" target="_system"><img src="images/twitter.png" alt="Twitter" style="width:16px;" class="ui-li-icon"/>Twitter</a></li>
                     <li><a href="http://www.instagram.com/CristoReyCande" onclick="window.open(this.href,'_system'); return false;" target="_system"><img src="images/Instagram.png" alt="Instagram" style="width:16px;" class="ui-li-icon"/>Instagram</a></li>
                     <li><a href="juevesSanto.html"><img src="images/recorrido.png" alt="JuevesSanto" style="width:16px;" class="ui-li-icon"/>Jueves Santo</a></li>
-                    <li><a href="procesionInfantil.html"><img src="images/recorrido.png" alt="JuevesSanto" style="width:16px;" class="ui-li-icon"/>Jueves Santo</a></li>
+                    <li><a href="procesionInfantil.html"><img src="images/recorrido.png" alt="procesionInfantil" style="width:16px;" class="ui-li-icon"/>Procesi&oacute;n Infantil</a></li>
                 </ul>
             </div>
-            <div id="headerHome" data-role="header"  data-theme="b" data-tap-toggle="false" data-position="fixed">
+            <div id="headerHome" data-role="header"  data-theme="a" data-tap-toggle="false" data-position="fixed">
                 <div id="botonMas">
-                    <a href="#mypanel" data-theme="a" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all">No text</a>
+                    <a href="#mypanel" data-theme="b" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all">No text</a>
                 </div>
                 <div id="headerInner">
                     <div id="logoCR"></div>
-                    <h1 style="white-space:normal; font-size: small;width:140px;float:left;margin:10px 0;text-align:center">
+                    <h1 style="white-space:normal; font-size: small;width:140px;float:left;margin:10px 0;text-align:center;color:#fff;text-shadow:none">
                         Audios
                     </h1>
                     <div id="logoSV"></div>
                 </div>
+                <div data-role="navbar" class="ui-navbar" role="navigation">
+					<ul>
+				        <li><a class="ui-btn-active" href="#historia">Hist&oacute;ricos</a></li>
+				        <li><a href="#poemas">Poemas</a></li>
+				        <li><a href="#marchas">Marchas</a></li>
+				        <li><a href="#programas">Programas</a></li>
+				    </ul>					
+			    </div><!-- /navbar -->
             </div>
-            <div data-role="main" style="min-height:400px;">
-            	<div data-role="tabs">
-	                <div data-role="navbar">
-					    <ul>
-					        <li><a href="#historia" class="ui-btn-active">Hist&oacute;ricos</a></li>
-					        <!-- li><a href="#mensajes">Mensajes</a></li -->
-					        <li><a href="#poemas">Poemas</a></li>
-					        <li><a href="#marchas">Marchas</a></li>
-					        <li><a href="#programas">Programas</a></li>
-					    </ul>
-					</div><!-- /navbar -->
-	            		
+            <!-- div data-role="main" style="min-height:400px;" -->
+            	<div data-role="tabs">	            		
 					<div class="ui-content" id="historia" >
 	                <ul data-role="listview" data-inset="true" data-theme="a">
 	                    <li data-role="list-divider">Datos Interesantes de Carlos R. Diaz del Cid</li>
@@ -121,16 +119,16 @@ and open the template in the editor.
 					</div>
 					<div class="ui-content" id="marchas" ></div>
 					<div class="ui-content" id="programas" >
-	                <ul data-role="listview" data-inset="true" data-theme="a" id="grabados">
-					</ul>					
-	                <ul data-role="listview" data-inset="true" data-theme="a" id="vivo">
-	                    <li data-role="list-divider" style="white-space:normal; font-size: small">Escucha nuestro programa cuaresmal de lunes a viernes de 20:00 a 20:30.</li>
-	                    <li class="enVivo"><a href="http://arcamediagroup.net:8000/listen.pls" onclick="window.open(this.href,'_system'); return false;">iPhone</a></li>
-	                    <li class="enVivo"><a href="rtsp://arcamediastream.net/8000/default.stream" onclick="window.open(this.href,'_system'); return false;">Android</a></li>
-					</ul>					
+		                <ul data-role="listview" data-inset="true" data-theme="a" id="grabados">
+						</ul>					
+		                <ul data-role="listview" data-inset="true" data-theme="a" id="vivo">
+		                    <li data-role="list-divider" style="white-space:normal; font-size: small">Escucha nuestro programa cuaresmal de lunes a viernes de 20:00 a 20:30.</li>
+		                    <li class="enVivo"><a href="http://arcamediagroup.net:8000/listen.pls" onclick="window.open(this.href,'_system'); return false;">iPhone</a></li>
+		                    <li class="enVivo"><a href="rtsp://arcamediastream.net/8000/default.stream" onclick="window.open(this.href,'_system'); return false;">Android</a></li>
+						</ul>					
 					</div>
 				</div>
-            </div>
+            <!-- /div -->
         </div>    
     </body>
 </html>            
