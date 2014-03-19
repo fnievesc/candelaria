@@ -22,7 +22,7 @@
     <gap:plugin name="org.apache.cordova.file" />
     <gap:plugin name="org.apache.cordova.geolocation" />
     <gap:plugin name="org.apache.cordova.media" />
-    <gap:plugin name="org.apache.cordova.network" />
+    <gap:plugin name="org.apache.cordova.network-information" />
     <gap:plugin name="org.apache.cordova.dialogs" />
 
 
