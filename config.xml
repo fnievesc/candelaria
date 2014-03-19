@@ -69,6 +69,7 @@
     <gap:splash src="res/splash/android/hdpi.png" gap:platform="android" gap:density="hdpi" />
     <gap:splash src="res/splash/android/xhdpi.png" gap:platform="android" gap:density="xhdpi" />
 
+	<access origin="*"/>
     <access origin="http://127.0.0.1*" />
     <access origin="http://216.120.237.30*" />
     <access origin="https://216.120.237.30*" />

@@ -1,5 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget>
+	<access origin="*"/>
     <access origin="http://127.0.0.1*" />
     <access origin="http://216.120.237.30*" />
     <access origin="https://216.120.237.30*" />
     <access origin="https://googleapis.com" subdomains="true" />
     <access origin="https://maps.gstatic.com" />
+</widget>
