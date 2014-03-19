@@ -23,7 +23,7 @@
     <gap:plugin name="org.apache.cordova.geolocation" />
     <gap:plugin name="org.apache.cordova.media" />
     <gap:plugin name="org.apache.cordova.network" />
-    <gap:plugin name="org.apache.cordova.notification" />
+    <gap:plugin name="org.apache.cordova.dialogs" />
 
 
     <gap:platform name="ios" />
