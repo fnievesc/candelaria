@@ -31,7 +31,7 @@ and open the template in the editor.
     <body>
         <div data-role="page">
             <div data-role="panel" id="mypanel">
-                <ul data-role="listview" data-inset="false" data-theme="b">
+                <ul data-role="listview" data-inset="false" data-theme="a">
                     <li><a href="index.html"><img src="images/logoCR.png" alt="Bienvenida" style="width:16px;" class="ui-li-icon"/>Bienvenida</a></li>
                     <li><a href="juevesSanto.html"><img src="images/recorrido.png" alt="JuevesSanto" style="width:16px;" class="ui-li-icon"/>Jueves Santo</a></li>
                     <li><a href="procesionInfantil.html"><img src="images/recorrido.png" alt="procesionInfantil" style="width:16px;" class="ui-li-icon"/>Procesi&oacute;n Infantil</a></li>
@@ -46,26 +46,24 @@ and open the template in the editor.
                     <li><a href="http://www.instagram.com/CristoReyCande" onclick="window.open(this.href,'_system'); return false;" target="_system"><img src="images/Instagram.png" alt="Instagram" style="width:16px;" class="ui-li-icon"/>Instagram</a></li>
                 </ul>
             </div>
-            <div id="headerHome" data-role="header"  data-theme="b" data-tap-toggle="false" data-position="fixed">
+            <div class="nuevoHeader" data-role="header"  data-theme="a" data-tap-toggle="false" data-position="fixed">
                 <div id="botonMas">
-                    <a href="#mypanel" data-theme="none" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all">No text</a>
+                    <a href="#mypanel" data-theme="b" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all">No text</a>
                 </div>
                 <div id="headerInner">
-                    <div id="logoCR"></div>
-                    <h1 style="white-space:normal; font-size: small;width:140px;float:left;margin:10px 0;text-align:center">
-                        Quinto S&aacute;bado de Cuaresma 5 de Abril 2014
+                    <h1 style="font-size: 16px;">
+                        Quinto S&aacute;bado <br/>5 de Abril 2014
                     </h1>
-                    <div id="logoSV"></div>
                 </div>
+            </div>
                 <div data-role="navbar" class="ui-navbar" role="navigation">
 					<ul>
-				        <li><a class="ui-btn-active" href="#recorridoTabInfantil" style="white-space:normal; font-size: small;height:34px;">Recorrido</a></li>
+				        <li><a class="ui-btn-active" href="#recorridoTab" style="white-space:normal; font-size: small;height:34px;">Recorrido</a></li>
 				        <li><a href="#recomendaciones" style="white-space:normal; font-size: small;height:34px;">Recomen- daciones</a></li>
 				        <li><a href="#programaMarchasInfantil" style="white-space:normal; font-size: small;height:34px;">Marchas</a></li>
 				        <li><a href="#horario" style="white-space:normal; font-size: small;height:34px;">Puntos Referencia</a></li>
 				    </ul>					
 			    </div><!-- /navbar -->
-            </div>
             	<div id="bodyProcesion" data-role="tabs">	            		
 					<div class="ui-content" id="recorridoTabInfantil" >
 	                	<div id="recorrido"></div>

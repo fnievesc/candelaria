@@ -31,7 +31,7 @@ and open the template in the editor.
     <body>
         <div data-role="page">
             <div data-role="panel" id="mypanel">
-                <ul data-role="listview" data-inset="false" data-theme="b">
+                <ul data-role="listview" data-inset="false" data-theme="a">
                     <li><a href="index.html"><img src="images/logoCR.png" alt="Bienvenida" style="width:16px;" class="ui-li-icon"/>Bienvenida</a></li>
                     <li><a href="juevesSanto.html"><img src="images/recorrido.png" alt="JuevesSanto" style="width:16px;" class="ui-li-icon"/>Jueves Santo</a></li>
                     <li><a href="procesionInfantil.html"><img src="images/recorrido.png" alt="procesionInfantil" style="width:16px;" class="ui-li-icon"/>Procesi&oacute;n Infantil</a></li>
@@ -46,17 +46,16 @@ and open the template in the editor.
                     <li><a href="http://www.instagram.com/CristoReyCande" onclick="window.open(this.href,'_system'); return false;" target="_system"><img src="images/Instagram.png" alt="Instagram" style="width:16px;" class="ui-li-icon"/>Instagram</a></li>
                 </ul>
             </div>
-            <div id="headerHome" data-role="header"  data-theme="b" data-tap-toggle="false" data-position="fixed">
+            <div class="nuevoHeader" data-role="header"  data-theme="a" data-tap-toggle="false" data-position="fixed">
                 <div id="botonMas">
-                    <a href="#mypanel" data-theme="none" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all">No text</a>
+                    <a href="#mypanel" data-theme="b" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all">No text</a>
                 </div>
                 <div id="headerInner">
-                    <div id="logoCR"></div>
-                    <h1 style="white-space:normal; font-size: small;width:140px;float:left;margin:10px 0;text-align:center">
-                        Jueves Santo 17 de Abril 2014
+                    <h1 style="font-size: 16px;">
+                        Jueves Santo <br/>17 de Abril 2014
                     </h1>
-                    <div id="logoSV"></div>
                 </div>
+            </div>
                 <div data-role="navbar" class="ui-navbar" role="navigation">
 					<ul>
 				        <li><a class="ui-btn-active" href="#recorridoTab" style="white-space:normal; font-size: small;height:34px;">Recorrido</a></li>
@@ -65,12 +64,11 @@ and open the template in the editor.
 				        <li><a href="#horario" style="white-space:normal; font-size: small;height:34px;">Puntos Referencia</a></li>
 				    </ul>					
 			    </div><!-- /navbar -->
-            </div>
-            	<div id="bodyProcesion" data-role="tabs">	            		
-					<div class="ui-content" id="recorridoTab" >
+            	<div id="bodyProcesion" class="ui-content" data-role="tabs">	            		
+					<div id="recorridoTab" >
 	                	<div id="recorrido"></div>
             		</div>
-					<div class="ui-content" id="recomendaciones" >
+					<div id="recomendaciones" >
 	                	<ul data-role="listview" data-inset="true" data-theme="a">
 	                		<li style="white-space:normal; font-size: small;" data-role="list-divider">La Procesi&oacute;n de Jes&uacute;s de Candelaria es un acto de oraci&oacute;n y penitencia, distingamonos para esta practica.</li>
 	                		<li style="white-space:normal; font-size: small;">No se Permite cargar con ni&ntilde;os en brazos ni al lado de las andas.</li>
@@ -85,8 +83,8 @@ and open the template in the editor.
 	                		<li style="white-space:normal; font-size: small;" data-role="list-divider">Se quiere cumplir con el uniforme completo incluyendo de Jueves Santo.</li> 
 	                	</ul>
             		</div>
-					<div class="ui-content" id="programaMarchas" ></div>
-            		<div class="ui-content" id="horario">
+					<div id="programaMarchas" ></div>
+            		<div id="horario">
             			<ul data-role="listview" data-inset="true" data-theme="a">
 							<li style="white-space:normal; font-size: small;" data-role="list-divider">Salida 6:15</li>
 							<li style="white-space:normal; font-size: small;">Ave. Juan Chapin y 1<sup>a</sup>. Calle 8:10</li>

@@ -48,12 +48,28 @@
 
             /* END RESET */
 
+			body
+			{
+				background-image: url('../images/fondo.jpg') !important;
+				background-size: 100% auto !important;
+				background-attachment: fixed !important;
+				overflow: hidden;
+			}
+
             #headerHome
             {
-                height: 68px;
+                height: 0px;
                 width: 100%;
-                background: #a400b3;
+                background: transparent !important;
                 padding-top: 20px;
+            }
+            
+            .nuevoHeader
+            {
+                width: 100%;
+                background: transparent !important;
+                padding-top: 20px;
+                height: 157px;
             }
             
             #botonMasMain
@@ -65,7 +81,9 @@
             {
                 height: 45px;
                 width: 40px;
-                float: left;
+                position: absolute;
+                top: 0;
+                left: 0;
             }
             
             #logoCR
@@ -88,8 +106,8 @@
 
             #mainPost
             {
-                width: 95%;
-                margin: 0 auto;
+                width: 293px;
+                margin: 280px auto 50px;
             }
             
             #otherOptions
@@ -106,9 +124,9 @@
             #mainPostTitle
             {
                 color: #FFF;
-                background-color: rgba(164,0,179,0.5);
-                padding: 10px;
+                padding: 0px;
                 text-align: center;
+                width:293px;
                 z-index: 0;
             }
             .menuOption
@@ -228,20 +246,67 @@
             
             #headerInner
             {
-                width: 280px;
+                width: 267px;
+                height: 57px;
                 margin: 0 auto;
                 overflow: hidden;
+                background-image: url('../images/header.png');
+                padding-top: 100px
             }
             
-            .ui-block-a .ui-bar, .ui-block-b .ui-bar
+            #headerInner h1
             {
-                color: #000 !important;
-                text-shadow: none;
-                font-weight: normal;
+				color: #FFFFFF;
+			    float: left;
+			    font-family: Helvetica !important;
+			    font-size: 33px;
+			    margin: 10px 7px;
+			    text-align: center;
+			    text-shadow: none;
+			    white-space: normal;
+			    width: 252px;
+            }
+            
+            .noHeader
+            {
+            	background-image: none !important;
+            }
+            
+            .ui-block-a .ui-bar, .ui-block-b .ui-bar,.ui-bar-a, .ui-page-theme-a .ui-bar-inherit, html .ui-bar-a .ui-bar-inherit, 
+            html .ui-body-a .ui-bar-inherit, html body .ui-group-theme-a .ui-bar-inherit, .ui-body-a, .ui-page-theme-a .ui-body-inherit, 
+            html .ui-bar-a .ui-body-inherit, html .ui-body-a .ui-body-inherit, html body .ui-group-theme-a .ui-body-inherit, 
+            html .ui-panel-page-container-a, .ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a .ui-panel-wrapper
+            {
+            	color: #FFF !important;
+            	text-shadow: none !important;
+            }
+            
+            .ui-bar-a, .ui-page-theme-a .ui-bar-inherit, html .ui-bar-a .ui-bar-inherit, html .ui-body-a .ui-bar-inherit, 
+            html body .ui-group-theme-a .ui-bar-inherit, .ui-body-a, .ui-page-theme-a .ui-body-inherit, html .ui-bar-a .ui-body-inherit, 
+            html .ui-body-a .ui-body-inherit, html body .ui-group-theme-a .ui-body-inherit, html .ui-panel-page-container-a
+            {
+            	background: none !important;
+            	border: none !important;
+            	border-bottom: 1px solid #F9F9F9 !important;
             }
             
             .ui-block-a strong{
                 font-weight: bold;
+            }
+            
+            .ui-content{
+            	overflow:auto !important;
+            	padding: 0 10px !important;
+            }
+            
+            .ui-tabs
+            {
+            	padding-bottom: 30px !important;
+            }
+            
+            .ui-grid-solo
+            {
+            	background: transparent !important;
             }
             
 			#bodyAudios .ui-content
@@ -249,11 +314,6 @@
 				padding: 40px 0 0 !important;
 			}	
 			
-			#bodyProcesion .ui-content
-			{
-				padding: 52px 0 0 !important;
-			}
-
 			#bodyProcesion #recomendaciones p
 			{
 				margin: 20px 0;
@@ -268,4 +328,26 @@
 			{
 				margin-top: 20px;
 				font-size: 150%;
+			}
+			
+			#bodyHome
+			{
+				background-repeat:no-repeat;
+				min-height:611px;
+				background-image:url('../images/bienvenida.png');
+				background-position: center top;
+				background-repeat: no-repeat;
+				width:320px;
+				margin: 0 auto;	
+				padding: 0;			
+			}
+			
+			.ui-header
+			{
+				border: none !important;
+			}
+			
+			#mypanel
+			{
+				background: #F9F9F9 !important;
 			}

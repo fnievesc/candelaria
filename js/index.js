@@ -63,6 +63,10 @@ $(document).bind("pagebeforechange", function(e, data)
 
 $(document).bind('pagechange',function(toPage, options){
     var url = $.mobile.path.parseUrl(toPage.currentTarget.URL);
+    if(url.filename == 'juevesSanto.html' || url.filename== 'procesionInfantil.html')
+		$('.ui-content').attr('style','height:'+($(window).height()-247)+'px !important');
+	else
+		$('.ui-content').attr('style','height:'+($(window).height()-177)+'px !important')
 
     switch(url.filename)
     {
@@ -201,13 +205,13 @@ function getNoticias()
             dataType:'jsonp',
             crossDomain:true
 }).done(function(data){
-        listHTML = '<ul data-role="listview" data-inset="true"><li data-role="list-divider">Noticias</li>';    
+        listHTML = '<ul data-role="listview" data-inset="true"><li data-role="list-divider">&nbsp;</li>';    
         noticias = data.noticias
         for(i=noticias.length-1;i>=0;i--)
         {
             listHTML += '<li><a href="noticia.html" data-transition="slide" onClick="noticiaid='+i+'"><img src="http://216.120.237.30/~frajonic/candelaria/'+noticias[i].imagen[0].url+'"><h2>'+noticias[i].titulo+'</h2><p>'+noticias[i].texto+'</p></a></li>';
         }
-        listHTML += '</ul>';
+        listHTML += '<li data-role="list-divider">&nbsp;</li></ul>';
         $('#noticiasHolder').html(listHTML).trigger('create');
     	$.mobile.loading('hide') 
     }).fail(function(){alert('error');    $.mobile.loading('hide') });
@@ -243,6 +247,7 @@ function getNoticia()
                 auto: 3000,
                 speed: 800
             });    
+			$.mobile.loading('hide') 
 			$.mobile.loading('hide') 
         }).fail(function()
     	{
