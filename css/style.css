@@ -47,13 +47,12 @@
             }
 
             /* END RESET */
-
-			body
+			
+			.Home
 			{
 				background-image: url('../images/fondo.jpg') !important;
 				background-size: 100% auto !important;
 				background-attachment: fixed !important;
-				overflow: hidden;
 			}
 
             #headerHome
@@ -67,7 +66,6 @@
             .nuevoHeader
             {
                 width: 100%;
-                background: transparent !important;
                 padding-top: 20px;
                 height: 157px;
             }
@@ -277,8 +275,8 @@
             html .ui-bar-a .ui-body-inherit, html .ui-body-a .ui-body-inherit, html body .ui-group-theme-a .ui-body-inherit, 
             html .ui-panel-page-container-a, .ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a .ui-panel-wrapper
             {
-            	color: #FFF !important;
-            	text-shadow: none !important;
+            	color: #000 !important;
+            	text-shadow: #F9F9F9 !important;
             }
             
             .ui-bar-a, .ui-page-theme-a .ui-bar-inherit, html .ui-bar-a .ui-bar-inherit, html .ui-body-a .ui-bar-inherit, 
@@ -295,7 +293,6 @@
             }
             
             .ui-content{
-            	overflow:auto !important;
             	padding: 0 10px !important;
             }
             
@@ -345,6 +342,10 @@
 			.ui-header
 			{
 				border: none !important;
+                background-image: url('../images/fondo.jpg') !important;
+                background-size: 100% auto !important;
+                background-position: center center !important;
+                background-attachment: fixed !important;
 			}
 			
 			#mypanel
