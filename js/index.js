@@ -264,7 +264,7 @@ function initMapaInfantil()
 
     var myLocation = new google.maps.LatLng(14.647695,-90.502769);
     map2 = new google.maps.Map(document.getElementById('recorridoTabInfantil'), {
-        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        mapTypeId: google.maps.MapTypeId.HYBRID,
         disableDefaultUI: true,
         zoom: 15
     });
@@ -329,7 +329,7 @@ function initMapa()
     $('#recorridoTab').css('width','100%');
 
     map = new google.maps.Map(document.getElementById('recorridoTab'), {
-        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        mapTypeId: google.maps.MapTypeId.HYBRID,
         disableDefaultUI: true,
         zoom: 15
     });
