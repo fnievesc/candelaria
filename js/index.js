@@ -16,6 +16,61 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
+var styles = [
+{
+featureType: 'landscape',
+elementType: 'all',
+stylers: [
+{ visibility: 'off' }
+]
+},{
+featureType: 'road.local',
+elementType: 'all',
+stylers: [
+{ "visibility": "on" },
+]
+},{
+featureType: 'poi',
+elementType: 'all',
+stylers: [
+{ visibility: 'off' }
+]
+},{
+featureType: 'road.highway',
+elementType: 'all',
+stylers: [
+{ visibility: 'on' }
+]
+},{
+featureType: 'water',
+elementType: 'all',
+stylers: [
+{ visibility: 'simplified' }
+]
+},{
+featureType: 'administrative',
+elementType: 'all',
+stylers: [
+{ visibility: 'off' }
+]
+},
+{
+featureType: 'road.arterial',
+elementType: 'all',
+stylers: [
+{ visibility: 'on' }
+]
+},
+{
+featureType: 'transit',
+elementType: 'all',
+stylers: [
+{ visibility: 'off' }
+]
+}
+];
+
 var noticiaid = 0;
 var app = {
 irA: function(url) {
@@ -264,12 +319,13 @@ function initMapaInfantil()
 
     var myLocation = new google.maps.LatLng(14.647695,-90.502769);
     map2 = new google.maps.Map(document.getElementById('recorridoTabInfantil'), {
-        mapTypeId: google.maps.MapTypeId.HYBRID,
+        mapTypeId: google.maps.MapTypeId.TERRAIN,
         disableDefaultUI: true,
-        zoom: 15
+        zoom: 15,
     });
     map2.setCenter(myLocation);
     map2.setZoom(18);
+    map2.setOptions({styles: styles});
 
     var infantilRuta = new google.maps.Polyline({
 	    path: recorridoInfantil,
@@ -329,11 +385,12 @@ function initMapa()
     $('#recorridoTab').css('width','100%');
 
     map = new google.maps.Map(document.getElementById('recorridoTab'), {
-        mapTypeId: google.maps.MapTypeId.HYBRID,
+        mapTypeId: google.maps.MapTypeId.TERRAIN,
         disableDefaultUI: true,
         zoom: 15
     });
 
+    map.setOptions({styles: styles});
 
     var primerTramoRuta = new google.maps.Polyline({
     path: primerTramo,
