@@ -82,6 +82,8 @@ stylers: [
 var posJesus=null;
 var posVirgen=null;
 var noticiaid = 0;
+var map = null;
+var map2 = null;
 var app = {
 irA: function(url) {
         $.mobile.changePage(url,{ transition: 'flow', changeHash: true });
@@ -599,10 +601,20 @@ function updatePosInfantil()
             dataType:'jsonp',
             crossDomain:true
 	}).done(function(data){
-		posJesus.setPosition(new google.maps.LatLng(data.jesus.posicionActual.latitud, data.jesus.posicionActual.longitud));
-		posJesus.setTitle("<h1>"+data.jesus.turno+"</h1><h2>"+data.jesus.marcha+"</h2>");
-		posVirgen.setPosition(new google.maps.LatLng(data.virgen.posicionActual.latitud, data.virgen.posicionActual.longitud));
-		posVirgen.setTitle("<h1>"+data.virgen.turno+"</h1><h2>"+data.virgen.marcha+"</h2>");
+		if(data.salio)
+		{
+			posJesus.setMap(map2);
+			posJesus.setPosition(new google.maps.LatLng(data.jesus.posicionActual.latitud, data.jesus.posicionActual.longitud));
+			posJesus.setTitle("<h1>"+data.jesus.turno+"</h1><h2>"+data.jesus.marcha+"</h2>");
+			posVirgen.setMap(map2);
+			posVirgen.setPosition(new google.maps.LatLng(data.virgen.posicionActual.latitud, data.virgen.posicionActual.longitud));
+			posVirgen.setTitle("<h1>"+data.virgen.turno+"</h1><h2>"+data.virgen.marcha+"</h2>");
+		}
+		else
+		{
+			posJesus.setMap(null);
+			posVirgen.setMap(null);
+		}
 	    $.mobile.loading('hide'); 
     }).fail(function(){    
     $.mobile.loading('hide'); 
