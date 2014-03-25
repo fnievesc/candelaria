@@ -24,6 +24,13 @@ elementType: 'all',
 stylers: [
 { visibility: 'off' }
 ]
+},
+{
+featureType: 'landscape',
+elementType: 'natural.landcover',
+stylers: [
+	{visibility: 'on'}
+]	
 },{
 featureType: 'road.local',
 elementType: 'all',
@@ -71,6 +78,9 @@ stylers: [
 }
 ];
 
+
+var posJesus=null;
+var posVirgen=null;
 var noticiaid = 0;
 var app = {
 irA: function(url) {
@@ -319,7 +329,7 @@ function initMapaInfantil()
 
     var myLocation = new google.maps.LatLng(14.647695,-90.502769);
     map2 = new google.maps.Map(document.getElementById('recorridoTabInfantil'), {
-        mapTypeId: google.maps.MapTypeId.TERRAIN,
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
         disableDefaultUI: true,
         zoom: 15,
     });
@@ -336,6 +346,25 @@ function initMapaInfantil()
 	});
 	
 	infantilRuta.setMap(map2);
+	
+	if(posJesus == null)
+		posJesus = new google.maps.Marker({
+                        "position": new google.maps.LatLng(14.647695,-90.502769),
+                        "title": "",
+                        "icon": 'images/andaCristoRey.png',
+                        "map": map2
+                    });
+    if(posVirgen == null) 
+		posVirgen = new google.maps.Marker({
+                        "position": new google.maps.LatLng(14.647695,-90.502769),
+                        "title": "",
+                        "icon": 'images/andaVirgen.png',
+                        "map": map2
+                    });
+
+	// Cada 5 min revisa la posicion
+	intervaloInfantil = setInterval(updatePosInfantil, "30000");
+	updatePosInfantil();
 
             $.ajax({url:'http://216.120.237.30/~candelar/movilAPI/puntosRefInfantil.php',
                      type:'POST',
@@ -385,7 +414,7 @@ function initMapa()
     $('#recorridoTab').css('width','100%');
 
     map = new google.maps.Map(document.getElementById('recorridoTab'), {
-        mapTypeId: google.maps.MapTypeId.TERRAIN,
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
         disableDefaultUI: true,
         zoom: 15
     });
@@ -415,6 +444,8 @@ function initMapa()
     strokeOpacity: 1.0,
     strokeWeight: 2
   });
+  
+  
   
  $.ajax({url:'http://216.120.237.30/~candelar/movilAPI/puntosRef.php',
              type:'POST',
@@ -558,4 +589,22 @@ function hideTabsJuevesSanto(e,url)
 	var $content = $($a.attr("href"));
 	$content.siblings().hide();
 	$content.show();
+}
+
+function updatePosInfantil()
+{
+    $.mobile.loading('show'); 
+    $.ajax({url:'http://216.120.237.30/~candelar/movilAPI/actualInfantil.php',
+            type:'POST',
+            dataType:'jsonp',
+            crossDomain:true
+	}).done(function(data){
+		posJesus.setPosition(new google.maps.LatLng(data.jesus.posicionActual.latitud, data.jesus.posicionActual.longitud));
+		posJesus.setTitle("<h1>"+data.jesus.turno+"</h1><h2>"+data.jesus.marcha+"</h2>");
+		posVirgen.setPosition(new google.maps.LatLng(data.virgen.posicionActual.latitud, data.virgen.posicionActual.longitud));
+		posVirgen.setTitle("<h1>"+data.virgen.turno+"</h1><h2>"+data.virgen.marcha+"</h2>");
+	    $.mobile.loading('hide'); 
+    }).fail(function(){    
+    $.mobile.loading('hide'); 
+	});
 }
