@@ -135,7 +135,7 @@ $(document).bind("pagebeforechange", function(e, data)
 $(document).bind('pagechange',function(toPage, options){
     var url = $.mobile.path.parseUrl(toPage.currentTarget.URL);
     if(url.filename == 'juevesSanto.html' || url.filename== 'procesionInfantil.html')
-		$('.ui-content').attr('style','height:'+($(window).height()-287)+'px !important');
+		$('.ui-content').attr('style','height:'+($(window).height()-258)+'px !important');
 	else
 	{
 		$('.ui-content').attr('style','height:'+($(window).height()-177)+'px !important');
@@ -633,7 +633,7 @@ function updatePosInfantil()
 			posJesusInfantil.setMap(map2);
 			posJesusInfantil.setPosition(new google.maps.LatLng(data.jesus.posicionActual.latitud, data.jesus.posicionActual.longitud));
 			posJesusInfantil.setTitle("<h1>"+data.jesus.turno+"</h1><h2>"+data.jesus.marcha+"</h2>");
-			$('#turnoInfo').html("<img src=\"/images/recorrido.png\" style=\"height:40px;float:left\"><p style=\"height:40px;padding-left:45px;padding-top: 5px;\">Turno "+data.jesus.turno+" de " + data.jesus.de + " a " + data.jesus.a +" sobre " + data.jesus.sobre +" con la Marcha "+data.jesus.marcha+" de " + data.jesus.autor + "</p>");
+			$('#turnoInfo').html("<img src=\"images/recorrido.png\" style=\"height:40px;float:left\"><p style=\"height:40px;padding-left:45px;padding-top: 5px;\">Turno "+data.jesus.turno+" de " + data.jesus.de + " a " + data.jesus.a +" sobre " + data.jesus.sobre +" con la Marcha "+data.jesus.marcha+" de " + data.jesus.autor + "</p>");
 			posVirgenInfantil.setMap(map2);
 			posVirgenInfantil.setPosition(new google.maps.LatLng(data.virgen.posicionActual.latitud, data.virgen.posicionActual.longitud));
 			posVirgenInfantil.setTitle("<h1>"+data.virgen.turno+"</h1><h2>"+data.virgen.marcha+"</h2>");

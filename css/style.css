@@ -329,6 +329,11 @@
 				font-size: 150%;
 			}
 			
+			#bodyProcesion
+			{
+				padding: 0 !important;
+			}
+			
 			#bodyHome
 			{
 				background-repeat:no-repeat;
