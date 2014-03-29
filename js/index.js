@@ -283,7 +283,7 @@ function getNoticias()
         noticias = data.noticias
         for(i=noticias.length-1;i>=0;i--)
         {
-            listHTML += '<li><a href="noticia.html" data-transition="slide" onClick="noticiaid='+i+'"><img src="http://216.120.237.30/~frajonic/candelaria/'+noticias[i].imagen[0].url+'"><h2>'+noticias[i].titulo+'</h2><p>'+noticias[i].texto+'</p></a></li>';
+            listHTML += '<li><a href="noticia.html" data-transition="slide" onClick="noticiaid='+i+'"><img src="http://216.120.237.30/~candelar/'+noticias[i].imagen[0].url+'"><h2>'+noticias[i].titulo+'</h2><p>'+noticias[i].texto+'</p></a></li>';
         }
         listHTML += '<li data-role="list-divider">&nbsp;</li></ul>';
         $('#noticiasHolder').html(listHTML).trigger('create');
@@ -304,13 +304,13 @@ function getNoticia()
         i = 0;
         listHTML = '<h2 class="ff_intro ff_ifirst">'+noticias[i].titulo+'</h2>';
         if(noticias[i].imagen.length == 1)
-            listHTML += '<img src="http://216.120.237.30/~frajonic/candelaria/'+noticias[i].imagen[0].url+'" style="width:90%">';
+            listHTML += '<img src="http://216.120.237.30/~candelar/'+noticias[i].imagen[0].url+'" style="width:90%">';
         else
         {
             listHTML += '<div class="carousel"><ul>';
             for(j=0;j<noticias[i].imagen.length;j++)
             {
-                listHTML += '<li><img src="http://216.120.237.30/~frajonic/candelaria/'+noticias[i].imagen[j].url+'" style="height:200px;width: auto;"/></li>';
+                listHTML += '<li><img src="http://216.120.237.30/~candelar/'+noticias[i].imagen[j].url+'" style="height:200px;width: auto;"/></li>';
             }
             listHTML += '</ul></div>';
         }
@@ -679,7 +679,3 @@ function updatePos()
     $.mobile.loading('hide'); 
 	});
 }
-
-$(document).bind("mobileinit", function(){
-  $.mobile.defaultPageTransition = 'flip';
-});
