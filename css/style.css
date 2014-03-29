@@ -359,3 +359,8 @@
 			{
 				color:#D3D5C5;
 			}
+			
+			.ui-panel-wrapper
+			{
+				background: none !important;
+			}
