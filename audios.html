@@ -53,17 +53,16 @@ and open the template in the editor.
                 </div>
            </div>
             <div data-role="navbar" class="ui-navbar" role="navigation">
-					<ul>
-				        <li><a class="ui-btn-active" href="#historia">Hist&oacute;ricos</a></li>
-				        <li><a href="#poemas">Poemas</a></li>
-				        <li><a href="#marchas">Marchas</a></li>
-				        <li><a href="#programas">Programas</a></li>
-				    </ul>					
-			    </div><!-- /navbar -->
-            </div>
+				<ul>
+			        <li><a class="ui-btn-active" href="#historia">Hist&oacute;ricos</a></li>
+			        <li><a href="#poemas">Poemas</a></li>
+			        <li><a href="#marchas">Marchas</a></li>
+			        <!-- li><a href="#programas">Programas</a></li -->
+			    </ul>					
+		    </div><!-- /navbar -->
             <!-- div data-role="main" style="min-height:400px;" -->
-            	<div data-role="tabs">	            		
-					<div class="ui-content" id="historia" >
+            	<div class="ui-content" data-role="tabs">	            		
+					<div id="historia" >
 	                <ul data-role="listview" data-inset="true" data-theme="a">
 	                    <li data-role="list-divider">Datos Interesantes de Carlos R. Diaz del Cid</li>
 	                    <li>
@@ -88,7 +87,7 @@ and open the template in the editor.
 	                        </audio>
 	                    </li>
 					</div -->
-					<div class="ui-content" id="poemas" >
+					<div id="poemas" >
 	                <ul data-role="listview" data-inset="true" data-theme="a">
 	                    <li data-role="list-divider">Hace Cuanto Tiempo</li>
 	                    <li>
@@ -116,8 +115,8 @@ and open the template in the editor.
 	                    </li>
 					</ul>					
 					</div>
-					<div class="ui-content" id="marchas" ></div>
-					<div class="ui-content" id="programas" >
+					<div id="marchas" ></div>
+					<!-- div id="programas" >
 		                <ul data-role="listview" data-inset="true" data-theme="a" id="grabados">
 						</ul>					
 		                <ul data-role="listview" data-inset="true" data-theme="a" id="vivo">
@@ -125,7 +124,7 @@ and open the template in the editor.
 		                    <li class="enVivo"><a href="http://arcamediagroup.net:8000/listen.pls" onclick="window.open(this.href,'_system'); return false;">iPhone</a></li>
 		                    <li class="enVivo"><a href="rtsp://arcamediastream.net/8000/default.stream" onclick="window.open(this.href,'_system'); return false;">Android</a></li>
 						</ul>					
-					</div>
+					</div -->
 				</div>
             <!-- /div -->
         </div>    
