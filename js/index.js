@@ -81,6 +81,8 @@ stylers: [
 
 var posJesus=null;
 var posVirgen=null;
+var posJesusInfantil=null;
+var posVirgenInfantil=null;
 var noticiaid = 0;
 var map = null;
 var map2 = null;
@@ -349,15 +351,15 @@ function initMapaInfantil()
 	
 	infantilRuta.setMap(map2);
 	
-	if(posJesus == null)
-		posJesus = new google.maps.Marker({
+	if(posJesusInfantil == null)
+		posJesusInfantil = new google.maps.Marker({
                         "position": new google.maps.LatLng(14.647695,-90.502769),
                         "title": "",
                         "icon": 'images/andaCristoRey.png',
                         "map": map2
                     });
-    if(posVirgen == null) 
-		posVirgen = new google.maps.Marker({
+    if(posVirgenInfantil == null) 
+		posVirgenInfantil = new google.maps.Marker({
                         "position": new google.maps.LatLng(14.647695,-90.502769),
                         "title": "",
                         "icon": 'images/andaVirgen.png',
@@ -446,6 +448,26 @@ function initMapa()
     strokeOpacity: 1.0,
     strokeWeight: 2
   });
+  
+  	if(posJesus == null)
+		posJesus = new google.maps.Marker({
+                        "position": new google.maps.LatLng(14.647695,-90.502769),
+                        "title": "",
+                        "icon": 'images/andaCristoRey.png',
+                        "map": map
+                    });
+    if(posVirgen == null) 
+		posVirgen = new google.maps.Marker({
+                        "position": new google.maps.LatLng(14.647695,-90.502769),
+                        "title": "",
+                        "icon": 'images/andaVirgen.png',
+                        "map": map
+                    });
+
+	// Cada 5 min revisa la posicion
+	intervalo = setInterval(updatePos, "30000");
+	updatePos();
+
   
   
   
@@ -603,10 +625,38 @@ function updatePosInfantil()
 	}).done(function(data){
 		if(data.salio)
 		{
-			posJesus.setMap(map2);
+			posJesusInfantil.setMap(map2);
+			posJesusInfantil.setPosition(new google.maps.LatLng(data.jesus.posicionActual.latitud, data.jesus.posicionActual.longitud));
+			posJesusInfantil.setTitle("<h1>"+data.jesus.turno+"</h1><h2>"+data.jesus.marcha+"</h2>");
+			posVirgenInfantil.setMap(map2);
+			posVirgenInfantil.setPosition(new google.maps.LatLng(data.virgen.posicionActual.latitud, data.virgen.posicionActual.longitud));
+			posVirgenInfantil.setTitle("<h1>"+data.virgen.turno+"</h1><h2>"+data.virgen.marcha+"</h2>");
+		}
+		else
+		{
+			posJesusInfantil.setMap(null);
+			posVirgenInfantil.setMap(null);
+		}
+	    $.mobile.loading('hide'); 
+    }).fail(function(){    
+    $.mobile.loading('hide'); 
+	});
+}
+
+function updatePos()
+{
+    $.mobile.loading('show'); 
+    $.ajax({url:'http://216.120.237.30/~candelar/movilAPI/actual.php',
+            type:'POST',
+            dataType:'jsonp',
+            crossDomain:true
+	}).done(function(data){
+		if(data.salio)
+		{
+			posJesus.setMap(map);
 			posJesus.setPosition(new google.maps.LatLng(data.jesus.posicionActual.latitud, data.jesus.posicionActual.longitud));
 			posJesus.setTitle("<h1>"+data.jesus.turno+"</h1><h2>"+data.jesus.marcha+"</h2>");
-			posVirgen.setMap(map2);
+			posVirgen.setMap(map);
 			posVirgen.setPosition(new google.maps.LatLng(data.virgen.posicionActual.latitud, data.virgen.posicionActual.longitud));
 			posVirgen.setTitle("<h1>"+data.virgen.turno+"</h1><h2>"+data.virgen.marcha+"</h2>");
 		}

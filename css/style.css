@@ -72,7 +72,7 @@
             
             #botonMasMain
             {
-                background-image: url('../images/mas.png');
+                background-image: url('../images/mas_blanco.png');
             }
             
             #botonMas
@@ -126,6 +126,8 @@
                 text-align: center;
                 width:293px;
                 z-index: 0;
+                text-shadow: none !important;
+                font-size: 50%;
             }
             .menuOption
             {
@@ -149,17 +151,17 @@
 
             #botonGaleria
             {
-                background-image: url('../images/galeria.png');
+                background-image: url('../images/galeria_blanco.png');
             }
 
             #botonEventos
             {
-                background-image: url('../images/pregon.png');
+                background-image: url('../images/pregon_blanco.png');
             }
 
             #botonInfoParroquial
             {
-                background-image: url('../images/parroquial.png');
+                background-image: url('../images/parroquial_blanco.png');
             }
 
             #botonAudios
