@@ -65,8 +65,8 @@ and open the template in the editor.
 				    </ul>					
 			    </div><!-- /navbar -->
             	<div id="bodyProcesion" class="ui-content" data-role="tabs">	            		
-					<div id="recorridoTab" class="fondoMapa ui-content"></div>
-					<div id="recomendaciones" >
+					<div id="recorridoTab" class="ui-content"></div>
+					<div id="recomendaciones" style="display:none;" >
 	                	<ul data-role="listview" data-inset="true" data-theme="a">
 	                		<li style="white-space:normal; font-size: small;" data-role="list-divider">La Procesi&oacute;n de Jes&uacute;s de Candelaria es un acto de oraci&oacute;n y penitencia, distingamonos para esta practica.</li>
 	                		<li style="white-space:normal; font-size: small;">No se Permite cargar con ni&ntilde;os en brazos ni al lado de las andas.</li>
@@ -81,8 +81,8 @@ and open the template in the editor.
 	                		<li style="white-space:normal; font-size: small;" data-role="list-divider">Se quiere cumplir con el uniforme completo incluyendo de Jueves Santo.</li> 
 	                	</ul>
             		</div>
-					<div id="programaMarchas" ></div>
-            		<div id="horario">
+					<div id="programaMarchas"  style="display:none;"></div>
+            		<div id="horario" style="display:none;">
             			<ul data-role="listview" data-inset="true" data-theme="a">
 							<li style="white-space:normal; font-size: small;" data-role="list-divider">Salida 6:15</li>
 							<li style="white-space:normal; font-size: small;">Ave. Juan Chapin y 1<sup>a</sup>. Calle 8:10</li>
@@ -102,6 +102,7 @@ and open the template in the editor.
             			</ul>
             		</div>
         		</div>
+        		<div data-role="footer" id="turnoInfo"></div>
         </div>    
     </body>
 </html>            

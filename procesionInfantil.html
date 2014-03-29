@@ -64,9 +64,9 @@ and open the template in the editor.
 				        <li><a href="#horario" style="white-space:normal; font-size: small;height:34px;">Puntos Referencia</a></li>
 				    </ul>					
 			    </div><!-- /navbar -->
-            	<div id="bodyProcesion" data-role="tabs">	            		
+            	<div id="bodyProcesion" class="ui-content" data-role="tabs">	            		
 					<div class="ui-content fondoMapa" id="recorridoTabInfantil" ></div>
-					<div class="ui-content" id="recomendaciones" >
+					<div class="ui-content" id="recomendaciones"  style="display:none;">
 						<h2>Queridos  Padres de Familia:</h2>
 						
 						
@@ -147,8 +147,8 @@ and open the template in the editor.
 						Infantil de Candelaria siga siendo ese encuentro tan esperado con
 						Jesús de Candelaria y Santísima Virgen de Dolores.</p>
             		</div>
-					<div class="ui-content" id="programaMarchasInfantil" ></div>
-            		<div class="ui-content" id="horario">
+					<div class="ui-content" id="programaMarchasInfantil"  style="display:none;"></div>
+            		<div class="ui-content" id="horario" style="display:none;">
             			<ul data-role="listview" data-inset="true" data-theme="a">
 							<li style="white-space:normal; font-size: small;" data-role="list-divider">12:00 Inicia el cortejo</li>
 							<li style="white-space:normal; font-size: small;">12:35 Ingresa al Barrio Moderno</li>
@@ -162,6 +162,7 @@ and open the template in the editor.
             			</ul>
             		</div>
         		</div>
+        		<div data-role="footer" id="turnoInfo"></div>
         </div>    
     </body>
 </html>            

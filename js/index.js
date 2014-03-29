@@ -86,6 +86,8 @@ var posVirgenInfantil=null;
 var noticiaid = 0;
 var map = null;
 var map2 = null;
+var intervalo = null;
+var intervaloInfantil = null;
 var app = {
 irA: function(url) {
         $.mobile.changePage(url,{ transition: 'flow', changeHash: true });
@@ -133,10 +135,13 @@ $(document).bind("pagebeforechange", function(e, data)
 $(document).bind('pagechange',function(toPage, options){
     var url = $.mobile.path.parseUrl(toPage.currentTarget.URL);
     if(url.filename == 'juevesSanto.html' || url.filename== 'procesionInfantil.html')
-		$('.ui-content').attr('style','height:'+($(window).height()-247)+'px !important');
+		$('.ui-content').attr('style','height:'+($(window).height()-287)+'px !important');
 	else
-		$('.ui-content').attr('style','height:'+($(window).height()-177)+'px !important')
-
+	{
+		$('.ui-content').attr('style','height:'+($(window).height()-177)+'px !important');
+	}
+	clearInterval(intervalo);
+	clearInterval(intervaloInfantil);
     switch(url.filename)
     {
         case 'jn.html':
@@ -328,7 +333,7 @@ function getNoticia()
 function initMapaInfantil()
 {
     $.mobile.loading('show') 
-    $('#recorridoTabInfantil').css('height',$(window).height()-68);
+    $('#recorridoTabInfantil').css('height',$(window).height()-108);
     $('#recorridoTabInfantil').css('width','100%');
 
     var myLocation = new google.maps.LatLng(14.647695,-90.502769);
@@ -367,7 +372,7 @@ function initMapaInfantil()
                     });
 
 	// Cada 5 min revisa la posicion
-	intervaloInfantil = setInterval(updatePosInfantil, "30000");
+	intervaloInfantil = setInterval(updatePosInfantil, 300000);
 	updatePosInfantil();
 
             $.ajax({url:'http://216.120.237.30/~candelar/movilAPI/puntosRefInfantil.php',
@@ -414,7 +419,7 @@ function initMapaInfantil()
 function initMapa()
 {
     $.mobile.loading('show'); 
-    $('#recorridoTab').css('height',$(window).height()-68);
+    $('#recorridoTab').css('height',$(window).height()-108);
     $('#recorridoTab').css('width','100%');
 
     map = new google.maps.Map(document.getElementById('recorridoTab'), {
@@ -465,7 +470,7 @@ function initMapa()
                     });
 
 	// Cada 5 min revisa la posicion
-	intervalo = setInterval(updatePos, "30000");
+	intervalo = setInterval(updatePos, 300000);
 	updatePos();
 
   
@@ -628,6 +633,7 @@ function updatePosInfantil()
 			posJesusInfantil.setMap(map2);
 			posJesusInfantil.setPosition(new google.maps.LatLng(data.jesus.posicionActual.latitud, data.jesus.posicionActual.longitud));
 			posJesusInfantil.setTitle("<h1>"+data.jesus.turno+"</h1><h2>"+data.jesus.marcha+"</h2>");
+			$('#turnoInfo').html("<img src=\"/images/recorrido.png\" style=\"height:40px;float:left\"><p style=\"height:40px;padding-left:45px;padding-top: 5px;\">Turno "+data.jesus.turno+" de " + data.jesus.de + " a " + data.jesus.a +" sobre " + data.jesus.sobre +" con la Marcha "+data.jesus.marcha+" de " + data.jesus.autor + "</p>");
 			posVirgenInfantil.setMap(map2);
 			posVirgenInfantil.setPosition(new google.maps.LatLng(data.virgen.posicionActual.latitud, data.virgen.posicionActual.longitud));
 			posVirgenInfantil.setTitle("<h1>"+data.virgen.turno+"</h1><h2>"+data.virgen.marcha+"</h2>");
@@ -656,6 +662,7 @@ function updatePos()
 			posJesus.setMap(map);
 			posJesus.setPosition(new google.maps.LatLng(data.jesus.posicionActual.latitud, data.jesus.posicionActual.longitud));
 			posJesus.setTitle("<h1>"+data.jesus.turno+"</h1><h2>"+data.jesus.marcha+"</h2>");
+			$('#turnoInfo').html("<img src=\"/images/recorrido.png\" style=\"height:40px;float:left\"><p style=\"height:40px;padding-left:45px;padding-top: 5px;\">Turno "+data.jesus.turno+" de " + data.jesus.de + " a " + data.jesus.a +" sobre " + data.jesus.sobre +" con la Marcha "+data.jesus.marcha+" de " + data.jesus.autor + "</p>");
 			posVirgen.setMap(map);
 			posVirgen.setPosition(new google.maps.LatLng(data.virgen.posicionActual.latitud, data.virgen.posicionActual.longitud));
 			posVirgen.setTitle("<h1>"+data.virgen.turno+"</h1><h2>"+data.virgen.marcha+"</h2>");
