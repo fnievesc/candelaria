@@ -633,10 +633,10 @@ function updatePosInfantil()
 			posJesusInfantil.setMap(map2);
 			posJesusInfantil.setPosition(new google.maps.LatLng(data.jesus.posicionActual.latitud, data.jesus.posicionActual.longitud));
 			posJesusInfantil.setTitle("<h1>"+data.jesus.turno+"</h1><h2>"+data.jesus.marcha+"</h2>");
-			$('#turnoInfo').html("<img src=\"images/recorrido.png\" style=\"height:40px;float:left\"><p style=\"height:40px;padding-left:45px;padding-top: 5px;\">Turno "+data.jesus.turno+" de " + data.jesus.de + " a " + data.jesus.a +" sobre " + data.jesus.sobre +" con la Marcha "+data.jesus.marcha+" de " + data.jesus.autor + "</p>");
 			posVirgenInfantil.setMap(map2);
 			posVirgenInfantil.setPosition(new google.maps.LatLng(data.virgen.posicionActual.latitud, data.virgen.posicionActual.longitud));
 			posVirgenInfantil.setTitle("<h1>"+data.virgen.turno+"</h1><h2>"+data.virgen.marcha+"</h2>");
+			$('#turnoInfo').html("<img src=\"images/recorrido.png\" style=\"height:40px;float:left\"><p style=\"height:40px;padding-left:45px;padding-top: 5px;\">&Uacute;ltima actualizaci&oacute;n " + data.fechahora + "</p>");			
 		}
 		else
 		{
@@ -663,10 +663,11 @@ function updatePos()
 			posJesus.setMap(map);
 			posJesus.setPosition(new google.maps.LatLng(data.jesus.posicionActual.latitud, data.jesus.posicionActual.longitud));
 			posJesus.setTitle("<h1>"+data.jesus.turno+"</h1><h2>"+data.jesus.marcha+"</h2>");
-			$('#turnoInfo').html("<img src=\"/images/recorrido.png\" style=\"height:40px;float:left\"><p style=\"height:40px;padding-left:45px;padding-top: 5px;\">Turno "+data.jesus.turno+" de " + data.jesus.de + " a " + data.jesus.a +" sobre " + data.jesus.sobre +" con la Marcha "+data.jesus.marcha+" de " + data.jesus.autor + "</p>");
+			$('#turnoInfo').html("<img src=\"/images/logoCR.png\" style=\"height:40px;float:left\"><p style=\"height:40px;padding-left:45px;padding-top: 5px;\">Turno "+data.jesus.turno+" de " + data.jesus.de + " a " + data.jesus.a +" sobre " + data.jesus.sobre +" con la Marcha "+data.jesus.marcha+" de " + data.jesus.autor + "</p>");
 			posVirgen.setMap(map);
 			posVirgen.setPosition(new google.maps.LatLng(data.virgen.posicionActual.latitud, data.virgen.posicionActual.longitud));
 			posVirgen.setTitle("<h1>"+data.virgen.turno+"</h1><h2>"+data.virgen.marcha+"</h2>");
+			$('#turnoInfo').html($('#turnoInfo').html()+"<img src=\"/images/logoSV.png\" style=\"height:40px;float:left\"><p style=\"height:40px;padding-left:45px;padding-top: 5px;\">Turno "+data.virgen.turno+" de " + data.virgen.de + " a " + data.virgen.a +" sobre " + data.virgen.sobre +" con la Marcha "+data.virgen.marcha+" de " + data.virgen.autor + "</p>");
 		}
 		else
 		{
