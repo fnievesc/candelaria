@@ -71,6 +71,7 @@
                 padding-top: 20px;
                 height: 120px;
                 background-image: url('../images/header.jpg') !important;
+                background-size: 100% auto;
             }
                         
             #botonMas
@@ -359,12 +360,12 @@
 				padding: 0;			
 			}
 			
-			.ui-header
+			/*.ui-header
 			{
 				border: none !important;
                 background-size: 100% auto !important;
                 background-attachment: fixed !important;
-			}
+			}*/
 			
 			#mypanel
 			{
