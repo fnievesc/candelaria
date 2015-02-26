@@ -52,9 +52,8 @@
 			{
 				background-image: url('../images/fondo.jpg') !important;
 				background-size: 100% auto !important;
-				height: 720px !important;
 				background-repeat: no-repeat;
-				overflow:hidden;
+				overflow:hidden !important;
 				max-width: 400px;
 			}
 
@@ -111,7 +110,7 @@
             #otherOptions
             {
                 width: 280px;
-                margin: 515px auto 0 ;
+                margin: 440px auto 0 ;
                 overflow:hidden;
                 height:90px;
             }
