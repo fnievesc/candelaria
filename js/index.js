@@ -730,3 +730,35 @@ function updatePos()
     $.mobile.loading('hide'); 
 	});
 }
+
+function sendContacto()
+{
+    $.mobile.loading('show'); 
+    $.ajax({url:'http://216.120.237.30/~candelar/movilAPI/sendMail.php',
+    		data: {'from':$('#txtFrom').val(),
+    			   'email':$('#txtEmail').val(),
+    			   'phone':$('#txtPhone').val(),
+    			   'msg':$('#txtMensaje').val()},
+            type:'POST',
+            dataType:'jsonp',
+            crossDomain:true
+	}).done(function(data){
+		$('#txtFrom').val('');
+		$('#txtEmail').val('');
+		$('#txtPhone').val('');
+		$('#txtMensaje').val('');
+		$.mobile.loading('hide'); 
+		navigator.notification.alert(
+		    'Mensaje Enviado con exito',  // message
+		    null,         // callback
+		    'Mensaje enviado',            // title
+		    'Cerrar');                  // buttonName
+		}).fail(function(data){
+				navigator.notification.alert(
+		    'Mensaje no fue enviado. Pruebe de nuevo',  // message
+		    null,         // callback
+		    'Error',            // title
+		    'Cerrar');                  // buttonName
+	
+		});
+}
