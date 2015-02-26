@@ -45,6 +45,11 @@
                     border-collapse: collapse;
                     border-spacing: 0;
             }
+            
+            body
+            {
+            	overflow: hidden !important;
+            }
 
             /* END RESET */
 			
@@ -55,6 +60,7 @@
 				background-repeat: no-repeat;
 				overflow:hidden !important;
 				max-width: 400px;
+				width: 100% !important;
 			}
 
             #headerHome

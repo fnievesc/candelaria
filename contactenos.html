@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Asociaci&oacute;n de Devotos Cargadores</title>
+        <meta charset="x-iso-8859-11">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <script type="text/javascript" src="lib/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript" src="lib/jQueryMobile/jquery.mobile-1.4.0.min.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/swipe.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <link rel="stylesheet" type="text/css" href="lib/themes/candelaria.min.css" />
+        <link rel="stylesheet" type="text/css" href="lib/themes/jquery.mobile.icons.min" />
+        <link rel="stylesheet" type="text/css" href="lib/jQueryMobile/jquery.mobile.external-png-1.4.0.min.css" />
+        <link rel="stylesheet" type="text/css" href="lib/jQueryMobile/jquery.mobile.icons-1.4.0.min.css" />
+        <link rel="stylesheet" type="text/css" href="lib/jQueryMobile/jquery.mobile.inline-png-1.4.0.min.css" />
+        <link rel="stylesheet" type="text/css" href="lib/jQueryMobile/jquery.mobile.inline-svg-1.4.0.min.css" />
+        <link rel="stylesheet" type="text/css" href="lib/jQueryMobile/jquery.mobile.structure-1.4.0.min.css" />
+        <link rel="stylesheet" type="text/css" href="lib/jQueryMobile/jquery.mobile.theme-1.4.0.min.css" /-->
+        
+    </head>
+    <body>
+        <div data-role="page" id="bodyAudios">
+            <div data-role="panel" id="mypanel">
+                <ul data-role="listview" data-inset="false" data-theme="a">
+                    <li><a href="index.html" data-transition="flip"><img src="images/logoCR.png" alt="Bienvenida" style="width:16px;" class="ui-li-icon"/>Bienvenida</a></li>
+                    <li><a href="juevesSanto.html" data-transition="flip"><img src="images/recorrido.png" alt="JuevesSanto" style="width:16px;" class="ui-li-icon"/>Jueves Santo</a></li>
+                    <li><a href="procesionInfantil.html" data-transition="flip"><img src="images/recorrido.png" alt="procesionInfantil" style="width:16px;" class="ui-li-icon"/>Procesi&oacute;n Infantil</a></li>
+                    <li><a href="noticias.html" data-transition="flip"><img src="images/noticias.png" alt="Noticias" style="width:16px;" class="ui-li-icon"/>Noticias</a></li>
+                    <li><a href="galeria.html" data-transition="flip"><img src="images/galeria.png" alt="Galeria" style="width:16px;" class="ui-li-icon"/>Galer&iacute;a</a></li>
+                    <li><a href="pregon.html" data-transition="flip"><img src="images/pregon.png" alt="Preg&oacute;n" style="width:16px;" class="ui-li-icon"/>Preg&oacute;n</a></li>
+                    <li><a href="parroquial.html" data-transition="flip"><img src="images/parroquial.png" alt="Parroquial" style="width:16px;" class="ui-li-icon"/>Informaci&oacute;n Parroquial</a></li>
+                    <li><a href="marchas.html" data-transition="flip"><img src="images/audios.png" alt="Audios" style="width:16px;" class="ui-li-icon"/>Marchas F&uacute;nebres</a></li>
+		    		<li><a href="audios.html" data-transition="flip"><img src="images/audios.png" alt="Audios" style="width:16px;" class="ui-li-icon"/>Audios</a></li>
+                    <li><a href="historia.html" data-transition="flip"><img src="images/historia.png" alt="Historia" style="width:16px;" class="ui-li-icon"/>Historia</a></li>
+                    <li><a href="http://www.facebook.com/CristoReyCandelaria" onclick="window.open(this.href,'_system'); return false;" target="_system"><img src="images/facebook.png" alt="Facebook" style="width:16px;" class="ui-li-icon"/>Facebook</a></li>
+                    <li><a href="http://www.twitter.com/CristoReyCande" onclick="window.open(this.href,'_system'); return false;" target="_system"><img src="images/twitter.png" alt="Twitter" style="width:16px;" class="ui-li-icon"/>Twitter</a></li>
+                    <li><a href="http://www.instagram.com/CristoReyCande" onclick="window.open(this.href,'_system'); return false;" target="_system"><img src="images/Instagram.png" alt="Instagram" style="width:16px;" class="ui-li-icon"/>Instagram</a></li>
+                    <li><a href="contactenos.html" data-transition="flip"><img src="images/logoCR.png" alt="Contactenos" style="width:16px;" class="ui-li-icon"/>Cont&aacute;ctenos</a></li>
+                </ul>            </div>
+            <div class="nuevoHeader" data-role="header"  data-theme="a" data-tap-toggle="false" data-position="fixed">
+                <div id="botonMas">
+                    <a href="#mypanel" data-theme="b" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all">No text</a>
+                </div>
+                <div id="headerInner">
+                <h1>
+                    Audios
+                </h1>
+                </div>
+           </div>
+            <div data-role="navbar" class="ui-navbar" role="navigation">
+				<ul>
+			        <li><a class="ui-btn-active" href="#historia">Hist&oacute;ricos</a></li>
+			        <li><a href="#poemas">Poemas</a></li>
+			        <!-- li><a href="#marchas">Marchas</a></li -->
+			        <li><a href="#programas">Programas</a></li>
+			    </ul>					
+		    </div><!-- /navbar -->
+		    <div class="ui-content" data-role="tabs">
+		    	<label for="txtFrom">Nombre:</label>
+		    	<input type="text" name="txtFrom" id="txtFrom" value="" />
+		    	<label for="txtEmail">e-mail:</label>
+		    	<input type="text" name="txtEmail" id="txtEmail" value="" />
+		    	<label for="txtPhone">Tel&eacute;fono:</label>
+		    	<input type="text" name="txtPhone" id="txtPhone" value="" />
+		    	<label for="txtMensaje">Mensaje</label>
+		    	<textarea cols="40" rows="8" name="txtMensaje" id="txtMensaje"></textarea>
+            </div>    
+    </body>
+</html>            

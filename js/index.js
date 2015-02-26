@@ -138,12 +138,12 @@ $(document).bind("pagebeforechange", function(e, data)
 
 $(document).bind('pagechange',function(toPage, options){
     var url = $.mobile.path.parseUrl(toPage.currentTarget.URL);
-    if(url.filename == 'juevesSanto.html' || url.filename== 'procesionInfantil.html')
-		$('.ui-content').attr('style','height:'+($(window).height()-258)+'px !important');
+/*    if(url.filename == 'juevesSanto.html' || url.filename== 'procesionInfantil.html')
+		$('.ui-content').attr('style','height:'+($(window).height()-201)+'px !important');
 	else
 	{
-		$('.ui-content').attr('style','height:'+($(window).height()-177)+'px !important');
-	}
+		$('.ui-content').attr('style','height:'+($(window).height()-120)+'px !important');
+	}*/
 	clearInterval(intervalo);
 	clearInterval(intervaloInfantil);
     switch(url.filename)
