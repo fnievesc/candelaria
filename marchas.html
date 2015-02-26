@@ -25,7 +25,7 @@ and open the template in the editor.
         
     </head>
     <body>
-        <div data-role="page">
+        <div data-role="page" id="bodyAudios">
             <div data-role="panel" id="mypanel">
                 <ul data-role="listview" data-inset="false" data-theme="a">
                     <li><a href="index.html" data-transition="flip"><img src="images/logoCR.png" alt="Bienvenida" style="width:16px;" class="ui-li-icon"/>Bienvenida</a></li>
@@ -49,11 +49,23 @@ and open the template in the editor.
                     <a href="#mypanel" data-theme="b" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all">No text</a>
                 </div>
                 <div id="headerInner">
-                	<h1>Noticias</h1>
+                	<h1>Marchas F&uacute;nebres</h1>
                 </div>
-            </div>
-            <div role="main" id="noticiasHolder">
-            </div>
+           </div>
+            <div data-role="navbar" class="ui-navbar" role="navigation">
+				<ul>
+			        <li><a class="ui-btn-active" href="#disco1">Volumen 1</a></li>
+			        <li><a href="#disco2">Volumen 2</a></li>
+			        <li><a href="#disco3">Volumen 3</a></li>
+			    </ul>					
+		    </div><!-- /navbar -->
+            <!-- div data-role="main" style="min-height:400px;" -->
+            	<div class="ui-content" data-role="tabs">	            		
+					<div id="disco1" ></div>
+					<div id="disco2" ></div>
+					<div id="disco3" ></div>
+				</div>
+            <!-- /div -->
         </div>    
     </body>
-</html>
+</html>            

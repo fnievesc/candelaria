@@ -32,19 +32,21 @@ and open the template in the editor.
     </head>
     <body>
         <div data-role="page"  class="Home">
-                        <div data-role="panel" id="mypanel" data-animate="false">
+            <div data-role="panel" id="mypanel" data-animate="false">
                 <ul data-role="listview" data-inset="false" data-theme="a">
                     <li><a href="juevesSanto.html" data-transition="flip"><img src="images/recorrido.png" alt="JuevesSanto" style="width:16px;" class="ui-li-icon"/>Jueves Santo</a></li>
                     <li><a href="procesionInfantil.html" data-transition="flip"><img src="images/recorrido.png" alt="procesionInfantil" style="width:16px;" class="ui-li-icon"/>Procesi&oacute;n Infantil</a></li>
                     <li><a href="noticias.html" data-transition="flip"><img src="images/noticias.png" alt="Noticias" style="width:16px;" class="ui-li-icon"/>Noticias</a></li>
                     <li><a href="galeria.html" data-transition="flip"><img src="images/galeria.png" alt="Galeria" style="width:16px;" class="ui-li-icon"/>Galer&iacute;a</a></li>
-                    <li><a href="pregon.html" data-transition="flip"><img src="images/pregon.png" alt="Preg&oacute;n" style="width:16px;" class="ui-li-icon"/>Actividades 2014</a></li>
+                    <li><a href="pregon.html" data-transition="flip"><img src="images/pregon.png" alt="Preg&oacute;n" style="width:16px;" class="ui-li-icon"/>Preg&oacute;n</a></li>
                     <li><a href="parroquial.html" data-transition="flip"><img src="images/parroquial.png" alt="Parroquial" style="width:16px;" class="ui-li-icon"/>Informaci&oacute;n Parroquial</a></li>
-                    <li><a href="audios.html" data-transition="flip"><img src="images/audios.png" alt="Audios" style="width:16px;" class="ui-li-icon"/>Audios</a></li>
+                    <li><a href="marchas.html" data-transition="flip"><img src="images/audios.png" alt="Audios" style="width:16px;" class="ui-li-icon"/>Marchas F&uacute;nebres</a></li>
+		    		<li><a href="audios.html" data-transition="flip"><img src="images/audios.png" alt="Audios" style="width:16px;" class="ui-li-icon"/>Audios</a></li>
                     <li><a href="historia.html" data-transition="flip"><img src="images/historia.png" alt="Historia" style="width:16px;" class="ui-li-icon"/>Historia</a></li>
                     <li><a href="http://www.facebook.com/CristoReyCandelaria" onclick="window.open(this.href,'_system'); return false;" target="_system"><img src="images/facebook.png" alt="Facebook" style="width:16px;" class="ui-li-icon"/>Facebook</a></li>
                     <li><a href="http://www.twitter.com/CristoReyCande" onclick="window.open(this.href,'_system'); return false;" target="_system"><img src="images/twitter.png" alt="Twitter" style="width:16px;" class="ui-li-icon"/>Twitter</a></li>
                     <li><a href="http://www.instagram.com/CristoReyCande" onclick="window.open(this.href,'_system'); return false;" target="_system"><img src="images/Instagram.png" alt="Instagram" style="width:16px;" class="ui-li-icon"/>Instagram</a></li>
+                    <li><a href="contactenos.html" data-transition="flip"><img src="images/logoCR.png" alt="Contactenos" style="width:16px;" class="ui-li-icon"/>Cont&aacute;ctenos</a></li>
                 </ul>
             </div>
             <div id="headerHome" data-role="header"  data-theme="b" data-tap-toggle="false" data-position="fixed">
@@ -53,14 +55,14 @@ and open the template in the editor.
             </div>
             <div id="bodyHome" role="main" class="ui-content">
                 <div id="mainPost">
-                    <div id="mainPostTitle">Bienvenidos a la aplicaci&oacute;n oficial de la Asociaci&oacute;n de Devotos Cargadores de la Consagrada Imagen de Jes&uacute;s Nazareno de Candelaria y Sant&iacute;sima Virgen de Dolores de la parroquia de nuestra se&ntilde;ora de Candelaria.</div>
+                    <div id="mainPostTitle"></div>
                 </div>
                 <div id="otherOptions">
                     <!-- div class="menuOption" id="botonNoticias" onClick="app.irA('noticias.html')"><span>Noticias</a></span></div -->
                     <div class="menuOption" id="botonGaleria" onClick="app.irA('galeria.html')"><span>Galer&iacute;a</a></span></div>
                     <div class="menuOption" id="botonEventos" onClick="app.irA('pregon.html');"><span>Preg&oacute;n</span></div>
                     <div class="menuOption" id="botonInfoParroquial" onClick="app.irA('parroquial.html');"><span>Informaci&oacute;n Parroquial</span></div>
-                    <div class="menuOption" id="botonMasMain" onClick="$('#mypanel').panel('open')"><span>Informaci&oacute;n Parroquial</span></div>
+                    <div class="menuOption" id="botonMasMain" onClick="$('#mypanel').panel('open')"><span>M&aacute;s Opciones</span></div>
                     <!--div class="menuOption" id="botonAudios" onClick="app.irA('audios.html');"><span>Audios</span></div>
                     <div class="menuOption" id="botonHistoria" onClick="app.irA('historia.html');"><span>Historia</span></div>
                     <div class="menuOption" id="botonFacebook" onClick="app.externo('facebook.html');"><span>Facebook</span></div>

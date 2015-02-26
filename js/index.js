@@ -112,7 +112,11 @@ $(document).bind("pagebeforechange", function(e, data)
 
     switch(url.hash)
     {
-    	case '#marchas':
+    	case '#disco1':
+    	case '#disco2':
+    	case '#disco3':
+    		hideTabsMarchas(e,url);
+		break;
     	case '#historia':
     	case '#poemas':
     	case '#programas':
@@ -175,10 +179,14 @@ $(document).bind('pagechange',function(toPage, options){
             getPregon();
         break;
         case 'audios.html':
-        	getMarchas();
         	getProgramas();
         	hideTabsAudios(null, url);
     	break;
+    	case 'marchas.html':
+        	getMarchas();
+        	hideTabsMarchas(null, url);
+    	break; 
+    		
     }
 });
 
@@ -198,15 +206,35 @@ function getPregon()
 
 function getMarchas()
 {
-	if($('#marchas').html()=='')
+	if($('#disco1').html()=='')
 	{
 	    $.mobile.loading('show');
-	    $.ajax({url:'http://216.120.237.30/~candelar/movilAPI/marchas.php',
+	    $.ajax({url:'http://216.120.237.30/~candelar/movilAPI/marchas.php?disco=1',
 	            type:'POST',
 	            dataType:'jsonp',
 	            crossDomain:true
 	}).done(function(data){
-	        $('#marchas').html(data.marchas).trigger('create');
+	        $('#disco1').html(data.marchas).trigger('create');
+		    $.mobile.loading('hide'); 
+	    }).fail(function(){alert('error');    
+	    	$.mobile.loading('hide'); 
+		});
+	    $.ajax({url:'http://216.120.237.30/~candelar/movilAPI/marchas.php?disco=2',
+	            type:'POST',
+	            dataType:'jsonp',
+	            crossDomain:true
+	}).done(function(data){
+	        $('#disco2').html(data.marchas).trigger('create');
+		    $.mobile.loading('hide'); 
+	    }).fail(function(){alert('error');    
+	    	$.mobile.loading('hide'); 
+		});
+	    $.ajax({url:'http://216.120.237.30/~candelar/movilAPI/marchas.php?disco=3',
+	            type:'POST',
+	            dataType:'jsonp',
+	            crossDomain:true
+	}).done(function(data){
+	        $('#disco3').html(data.marchas).trigger('create');
 		    $.mobile.loading('hide'); 
 	    }).fail(function(){alert('error');    
 	    	$.mobile.loading('hide'); 
@@ -253,7 +281,7 @@ function programaMarchasInfantil()
 
 function getProgramas()
 {
-	if($('#grabados').html()=='')
+	if($('#programas').html()=='')
 	{
 	    $.mobile.loading('show');
 	    $.ajax({url:'http://216.120.237.30/~candelar/movilAPI/programas.php',
@@ -261,7 +289,7 @@ function getProgramas()
 	            dataType:'jsonp',
 	            crossDomain:true
 	}).done(function(data){
-	        $('#bodyPregon').html(data.content).trigger('create');
+	        $('#programas').html(data.programas).trigger('create');
 		    $.mobile.loading('hide'); 
 	    }).fail(function(){alert('error');    
 		    $.mobile.loading('hide'); 
@@ -577,6 +605,28 @@ window.onload = function () {
 };
 
 function hideTabsAudios(e,url)
+{
+	var $a = $("div[data-role='navbar'] a[href='" + url.hash + "']");
+	if ($a.length)
+	{
+	    // Suppress normal page change handling since we're handling it here for this case
+	    e.preventDefault();
+	}
+	// If the new page has a navbar, activate the content div for its active item
+	else
+	{
+	    $a = $(url.hash + " div[data-role='navbar']").find("a.ui-btn-active");
+	
+	// Allow normal page change handling to continue in this case so the new page finishes rendering
+	}
+	
+	// Show the content div to be activated and hide other content divs for this page
+	var $content = $($a.attr("href"));
+	$content.siblings().hide();
+	$content.show();
+}
+
+function hideTabsMarchas(e,url)
 {
 	var $a = $("div[data-role='navbar'] a[href='" + url.hash + "']");
 	if ($a.length)

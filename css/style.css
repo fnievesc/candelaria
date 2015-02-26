@@ -52,7 +52,9 @@
 			{
 				background-image: url('../images/fondo.jpg') !important;
 				background-size: 100% auto !important;
-				background-attachment: fixed !important;
+				height: 557px !important;
+				background-repeat: no-repeat;
+				overflow:hidden;
 			}
 
             #headerHome
@@ -67,21 +69,17 @@
             {
                 width: 100%;
                 padding-top: 20px;
-                height: 157px;
+                height: 120px;
+                background-image: url('../images/header.jpg') !important;
             }
-            
-            #botonMasMain
-            {
-                background-image: url('../images/mas_blanco.png');
-            }
-            
+                        
             #botonMas
             {
                 height: 45px;
                 width: 40px;
                 position: absolute;
-                top: 0;
-                left: 0;
+                top: 80px;
+                left: 90%;
             }
             
             #logoCR
@@ -111,7 +109,9 @@
             #otherOptions
             {
                 width: 280px;
-                margin: 0 auto;
+                margin: 515px auto 0 ;
+                overflow:hidden;
+                height:90px;
             }
             
             #mainPostPhoto img
@@ -121,7 +121,7 @@
             
             #mainPostTitle
             {
-                color: #FFF;
+                color: #500a0a;
                 padding: 0px;
                 text-align: center;
                 width:293px;
@@ -137,14 +137,22 @@
                 float: left;
                 background-size: 100% 100%;
                 cursor: pointer;
+                background: url('../images/menuOption.png');
             }
 
             .menuOption span
             {
-                display:none;
+				color: #fff;
+			    display: block;
+			    font-family: Arial;
+			    font-size: 10px;
+			    position: relative;
+			    text-align: center;
+			    top: 60px;
+			    width: 60px;
             }
 
-            #botonNoticias
+/*            #botonNoticias
             {
                 background-image: url('../images/noticias.png');
             }
@@ -204,6 +212,12 @@
                 background-image: url('../images/capilla360.png');
             }
             
+             #botonMasMain
+            {
+                background-image: url('../images/mas_blanco.png');
+            }
+*/
+            
             .noBackground
             {
                 background: none !important;
@@ -211,7 +225,7 @@
             
             #bodyMapa
             {
-                padding: 20px 0 0 !important;
+                padding: 0 !important;
                 margin: 0 !important;
             }
             
@@ -246,22 +260,22 @@
             
             #headerInner
             {
-                width: 267px;
-                height: 57px;
+                width: 100%;
+                height: 92px;
                 margin: 0 auto;
                 overflow: hidden;
                 background-image: url('../images/header.png');
-                padding-top: 100px
+                background-repeat: no-repeat;
+                padding-top: 28px
             }
             
             #headerInner h1
             {
 				color: #FFFFFF;
 			    float: left;
-			    font-family: Helvetica !important;
-			    font-size: 33px;
-			    margin: 10px 7px;
-			    text-align: center;
+			    font-family: Verdana !important;
+			    font-size: 25px;
+			    margin: 15px 0 0 110px;
 			    text-shadow: none;
 			    white-space: normal;
 			    width: 252px;
@@ -277,7 +291,7 @@
             html .ui-bar-a .ui-body-inherit, html .ui-body-a .ui-body-inherit, html body .ui-group-theme-a .ui-body-inherit, 
             html .ui-panel-page-container-a, .ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a .ui-panel-wrapper
             {
-            	color: #000 !important;
+            	color: #500a0a !important;
             	text-shadow: #F9F9F9 !important;
             }
             
@@ -295,7 +309,12 @@
             }
             
             .ui-content{
-            	padding: 0 10px !important;
+            	padding: 20px 10px 0 !important;
+            }
+            
+            .ui-content 
+            {
+            	color: #500a0a;
             }
             
             .ui-tabs
@@ -333,7 +352,6 @@
 			{
 				background-repeat:no-repeat;
 				min-height:611px;
-				background-image:url('../images/bienvenida.png');
 				background-position: center top;
 				background-repeat: no-repeat;
 				width:320px;
@@ -344,9 +362,7 @@
 			.ui-header
 			{
 				border: none !important;
-                background-image: url('../images/fondo.jpg') !important;
                 background-size: 100% auto !important;
-                background-position: center center !important;
                 background-attachment: fixed !important;
 			}
 			
