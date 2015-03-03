@@ -16,11 +16,12 @@ and open the template in the editor.
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript" src="js/swipe.js"></script>
         <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script> 
-        <script type="text/javascript" src="js/primerTramo.js"></script>
-        <script type="text/javascript" src="js/nuevoTramo.js"></script>
-        <script type="text/javascript" src="js/ultimoTramo.js"></script>
-        <script type="text/javascript" src="js/infantil.js"></script>
+        <script type="text/javascript" src="http://216.120.237.30/~candelar/movilAPI/js/primerTramo.js"></script>
+        <script type="text/javascript" src="http://216.120.237.30/~candelar/movilAPI/js/nuevoTramo.js"></script>
+        <script type="text/javascript" src="http://216.120.237.30/~candelar/movilAPI/js/ultimoTramo.js"></script>
+        <script type="text/javascript" src="http://216.120.237.30/~candelar/movilAPI/js/infantil.js"></script>
         <script type="text/javascript" src="js/jcarousellite_1.0.1.min.js"></script>
+        <script type="text/javascript" src="js/jquery.reel-min.js"></script>
         <link rel="stylesheet" type="text/css" href="css/style.css" />
         <link rel="stylesheet" type="text/css" href="lib/jQueryMobile/jquery.mobile.external-png-1.4.5.min.css" />
         <link rel="stylesheet" type="text/css" href="lib/jQueryMobile/jquery.mobile.icons-1.4.5.min.css" />
@@ -28,6 +29,7 @@ and open the template in the editor.
         <link rel="stylesheet" type="text/css" href="lib/jQueryMobile/jquery.mobile.inline-svg-1.4.5.min.css" />
         <link rel="stylesheet" type="text/css" href="lib/jQueryMobile/jquery.mobile.structure-1.4.5.min.css" />
         <link rel="stylesheet" type="text/css" href="lib/jQueryMobile/jquery.mobile.theme-1.4.5.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/style-reel.css" />
         
     </head>
     <body>
@@ -43,10 +45,11 @@ and open the template in the editor.
                     <li><a href="marchas.html" data-transition="flip"><img src="images/audios.png" alt="Audios" style="width:16px;" class="ui-li-icon"/>Marchas F&uacute;nebres</a></li>
 		    		<li><a href="audios.html" data-transition="flip"><img src="images/audios.png" alt="Audios" style="width:16px;" class="ui-li-icon"/>Audios</a></li>
                     <li><a href="historia.html" data-transition="flip"><img src="images/historia.png" alt="Historia" style="width:16px;" class="ui-li-icon"/>Historia</a></li>
+                    <li><a href="contactenos.html" data-transition="flip"><img src="images/logoCR.png" alt="Contactenos" style="width:16px;" class="ui-li-icon"/>Cont&aacute;ctenos</a></li>
+                    <li><a href="capilla.html" data-transition="flip"><img src="images/videos.png" alt="Capilla 360" style="width:16px;" class="ui-li-icon"/>Capilla 360</a></li>
                     <li><a href="http://www.facebook.com/CristoReyCandelaria" onclick="window.open(this.href,'_system'); return false;" target="_system"><img src="images/facebook.png" alt="Facebook" style="width:16px;" class="ui-li-icon"/>Facebook</a></li>
                     <li><a href="http://www.twitter.com/CristoReyCande" onclick="window.open(this.href,'_system'); return false;" target="_system"><img src="images/twitter.png" alt="Twitter" style="width:16px;" class="ui-li-icon"/>Twitter</a></li>
                     <li><a href="http://www.instagram.com/CristoReyCande" onclick="window.open(this.href,'_system'); return false;" target="_system"><img src="images/Instagram.png" alt="Instagram" style="width:16px;" class="ui-li-icon"/>Instagram</a></li>
-                    <li><a href="contactenos.html" data-transition="flip"><img src="images/logoCR.png" alt="Contactenos" style="width:16px;" class="ui-li-icon"/>Cont&aacute;ctenos</a></li>
                 </ul>
             </div>
             <div id="bodyHome" role="main" class="Home ui-content">
@@ -58,7 +61,7 @@ and open the template in the editor.
 	                    <!-- div class="menuOption" id="botonNoticias" onClick="app.irA('noticias.html')"><span>Noticias</a></span></div -->
 	                    <div class="menuOption" id="botonGaleria" onClick="app.irA('galeria.html')"><span>Galer&iacute;a</a></span></div>
 	                    <div class="menuOption" id="botonEventos" onClick="app.irA('pregon.html');"><span>Preg&oacute;n</span></div>
-	                    <div class="menuOption" id="botonInfoParroquial" onClick="app.irA('parroquial.html');"><span>Informaci&oacute;n Parroquial</span></div>
+	                    <div class="menuOption" id="botonInfoParroquial" onClick="app.irA('juevesSanto.html');"><span>Jueves Santo</span></div>
 	                    <div class="menuOption" id="botonMasMain" onClick="$('#mypanel').panel('open')"><span>M&aacute;s Opciones</span></div>
 	                    <!--div class="menuOption" id="botonAudios" onClick="app.irA('audios.html');"><span>Audios</span></div>
 	                    <div class="menuOption" id="botonHistoria" onClick="app.irA('historia.html');"><span>Historia</span></div>

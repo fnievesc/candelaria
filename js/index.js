@@ -180,6 +180,12 @@ $(document).bind('pagechange',function(toPage, options){
     	case 'index.html':
     		$('#mainImg').attr('style','height:'+$('#mainImg img').height()+"px !important");
     	break;
+    	case 'capilla.html':
+    	$('#image').reel({
+          stitched:    4828,
+          orientable:  true
+       });
+       break;
     		
     }
 });

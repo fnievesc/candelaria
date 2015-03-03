@@ -13,7 +13,6 @@ and open the template in the editor.
         <script type="text/javascript" src="lib/jQueryMobile/jquery.mobile-1.4.0.min.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript" src="js/swipe.js"></script>
-        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script> 
         <link rel="stylesheet" type="text/css" href="css/style.css" />
         <link rel="stylesheet" type="text/css" href="lib/themes/candelaria.min.css" />
         <link rel="stylesheet" type="text/css" href="lib/themes/jquery.mobile.icons.min" />
@@ -45,15 +44,22 @@ and open the template in the editor.
                     <li><a href="contactenos.html" data-transition="flip"><img src="images/logoCR.png" alt="Contactenos" style="width:16px;" class="ui-li-icon"/>Cont&aacute;ctenos</a></li>
                 </ul>
             </div>
-            <div id="headerHome" data-role="header"  data-theme="b" data-tap-toggle="false" data-position="fixed">
+            <div class="nuevoHeader" data-role="header"  data-theme="a" data-tap-toggle="false" data-position="fixed">
                 <div id="botonMas">
-                    <a href="#mypanel" data-theme="a" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all">No text</a>
+                    <a href="#mypanel" data-theme="b" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all">No text</a>
                 </div>
-                <div id='logo'></div>
-                <h1 style="white-space:normal; font-size: small">Videos</h1></div>
-            <div class="ui-content" data-role="main" id="bodyMapa" style="min-height:400px;">
-                Proximamente
+                <div id="headerInner">
+                	<h1>Capilla 360</h1>
+                </div>
             </div>
+            <div class="ui-content" data-role="main" class="ui-content" id="bodyGaleria" style="min-height:400px;">
+			  <img src="images/capilla.jpg" style="height:100%;"
+			      class="reel"
+			      id="image"
+			      data-image="images/capilla-reel.jpg"
+			      data-stitched="4828"
+			      data-orientable="true">
+        	</div>
         </div>    
     </body>
-</html>            
+</html>
