@@ -148,18 +148,9 @@ $(document).bind('pagechange',function(toPage, options){
 	clearInterval(intervaloInfantil);
     switch(url.filename)
     {
-        case 'jn.html':
-        case 'vm.html':
-        case 'mm.html':
-        case 'sj.html':
-        case 'pi.html':
-            $('.carousel ul li img').css('width',($(document).width()*90)/100)
-            $('.carousel').jCarouselLite({
-                visible: 1,
-                auto: 3000,
-                speed: 800
-            });
-        break;
+		case 'galeria.html':
+			getGaleria();
+		break;
         case 'juevesSanto.html':
         	hideTabsJuevesSanto(null, url);
             initMapa();
@@ -192,7 +183,7 @@ $(document).bind('pagechange',function(toPage, options){
 
 function getPregon()
 {
-    $.mobile.loading('show') 
+    $.mobile.loading('show');
     $.ajax({url:'http://216.120.237.30/~candelar/movilAPI/pregon.php',
             type:'POST',
             dataType:'jsonp',
@@ -297,7 +288,26 @@ function getProgramas()
 	}
 }
 
-
+function getGaleria()
+{
+    $.mobile.loading('show');
+    $.ajax({url:'http://216.120.237.30/~candelar/movilAPI/galeria.php',
+            type:'POST',
+            dataType:'jsonp',
+            crossDomain:true
+}).done(function(data){
+	        $('#bodyGaleria').html(data.galeria).trigger('create');
+		    $.mobile.loading('hide'); 
+	    }).fail(function(){
+			navigator.notification.alert(
+		    'Compruebe que tiene internet activado',  // message
+		    null,         // callback
+		    'Error obteniendo fotos',            // title
+		    'Cerrar');                  // buttonName
+    
+	    	$.mobile.loading('hide'); 
+		});
+}
 
 function getNoticias()
 {
@@ -761,4 +771,11 @@ function sendContacto()
 		    'Cerrar');                  // buttonName
 	
 		});
+}
+
+function changeImage(image)
+{
+	$.mobile.loading('show'); 
+	$('#lupaImg').attr("src","http://216.120.237.30/~candelar/movilAPI/gallery/"+image);
+	$.mobile.loading('hide'); 
 }
