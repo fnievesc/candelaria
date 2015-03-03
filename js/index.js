@@ -183,7 +183,7 @@ $(document).bind('pagechange',function(toPage, options){
     	case 'capilla.html':
     	$('#image').reel({
           stitched:    4828,
-          orientable:  true
+          orientable:  false
        });
        break;
     		
