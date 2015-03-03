@@ -24,7 +24,7 @@
     <gap:plugin name="org.apache.cordova.media" />
     <gap:plugin name="org.apache.cordova.network-information" />
     <gap:plugin name="org.apache.cordova.dialogs" />
-    <gap:plugin name="com.adobe.plugins.gaplugin" />
+    <gap:plugin name="com.adobe.plugins.gaplugin" version="2.4.0"/>
     <!-- gap:plugin name="com.adobe.plugins.pushplugin" / -->
 
 

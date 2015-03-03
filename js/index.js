@@ -630,21 +630,6 @@ window.onload = function () {
 	},
 	function failure() {
     } );
-
-    gaPlugin = window.plugins.gaPlugin;
-    gaPlugin.init(function(){ 		navigator.notification.alert(
-		    'Tracking funcionando',  // message
-		    null,         // callback
-		    'Bien',            // title
-		    'Cerrar');                  // buttonName
- }, function(){		navigator.notification.alert(
-		    'Tracking no funcionando',  // message
-		    null,         // callback
-		    'Error',            // title
-		    'Cerrar');                  // buttonName
-}, "UA-60345713-1", 10);
-
-
 };
 
 function hideTabsAudios(e,url)
