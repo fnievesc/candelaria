@@ -190,7 +190,7 @@ $(document).bind('pagechange',function(toPage, options){
        });
        break;
     }
-    gaPlugin.trackPage( null, null, url.filename);
+    ga_storage._trackPageview(url.filename);
 });
 
 function getPregon()
@@ -603,10 +603,8 @@ function initializePhoneGap( success, failure ) {
 window.onload = function () {
     initializePhoneGap( function success() {
         //start app
-        alert(window);
-        alert(window.plugins);
-		gaPlugin = window.plugins.gaPlugin;
-    	gaPlugin.init(function(){alert('nice');}, function(){alert('not nice')}, "UA-12345678-1", 10);                
+		//gaPlugin = window.plugins.gaPlugin;
+    	//gaPlugin.init(function(){alert('nice');}, function(){alert('not nice')}, "UA-12345678-1", 10);                
         /*pushNotification = window.plugins.pushNotification;
 		if ( device.platform == 'android' || device.platform == 'Android' )
 		{
