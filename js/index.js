@@ -603,8 +603,11 @@ function initializePhoneGap( success, failure ) {
 window.onload = function () {
     initializePhoneGap( function success() {
         //start app
-                
-        pushNotification = window.plugins.pushNotification;
+        alert(window);
+        alert(window.plugins);
+		gaPlugin = window.plugins.gaPlugin;
+    	gaPlugin.init(function(){alert('nice');}, function(){alert('not nice')}, "UA-12345678-1", 10);                
+        /*pushNotification = window.plugins.pushNotification;
 		if ( device.platform == 'android' || device.platform == 'Android' )
 		{
 		    pushNotification.register(
@@ -624,7 +627,7 @@ window.onload = function () {
 		            "alert":"true",
 		            "ecb":"onNotificationAPN"
 		        });
-		}        
+		}        */
 		
 
 	},
