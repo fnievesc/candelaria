@@ -297,6 +297,12 @@ function getGaleria()
             crossDomain:true
 }).done(function(data){
 	        $('#bodyGaleria').html(data.galeria).trigger('create');
+	        $('.photopopup').on({
+	        	popupbeforeposition: function(){
+	        		var maxHeight = ($(window).height() - 60) + "px";
+	        		$('#lupa img').css('max-height',maxHeight);
+	        	}
+	        });
 		    $.mobile.loading('hide'); 
 	    }).fail(function(){
 			navigator.notification.alert(
