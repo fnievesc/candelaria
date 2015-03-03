@@ -17,6 +17,9 @@
  * under the License.
  */
 
+var gaPlugin;
+
+
 var styles = [
 {
 featureType: 'landscape',
@@ -621,6 +624,10 @@ window.onload = function () {
 		            "ecb":"onNotificationAPN"
 		        });
 		}        
+		
+
+    gaPlugin = window.plugins.gaPlugin;
+    gaPlugin.init(successHandler, errorHandler, "UA-60345713-1", 10);
 	},
 	function failure() {
         //phonegap failed 
