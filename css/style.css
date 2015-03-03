@@ -115,9 +115,10 @@
             #otherOptions
             {
                 width: 280px;
-                margin: 440px auto 0 ;
+                margin: 20px auto 0 0;
                 overflow:hidden;
                 height:90px;
+                padding-bottom: 20px;
             }
             
             #mainPostPhoto img
