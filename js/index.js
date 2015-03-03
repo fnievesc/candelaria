@@ -603,6 +603,15 @@ function initializePhoneGap( success, failure ) {
 window.onload = function () {
     initializePhoneGap( function success() {
         //start app
+        
+		navigator.notification.alert(
+		    'Iniciado',  // message
+		    null,         // callback
+		    'Bien',            // title
+		    'Cerrar');                  // buttonName
+
+        
+        
         pushNotification = window.plugins.pushNotification;
 		if ( device.platform == 'android' || device.platform == 'Android' )
 		{
@@ -640,8 +649,11 @@ window.onload = function () {
 }, "UA-60345713-1", 10);
 	},
 	function failure() {
-        //phonegap failed 
-        //alert('Error loading system')
+		navigator.notification.alert(
+		    'Error loading system',  // message
+		    null,         // callback
+		    'Error',            // title
+		    'Cerrar');                  // buttonName
     } );
 
 };
