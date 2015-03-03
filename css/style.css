@@ -55,7 +55,6 @@
 			
 			.Home
 			{
-				background-image: url('../images/fondo.jpg') !important;
 				background-size: 100% auto !important;
 				background-repeat: no-repeat;
 				overflow:hidden !important;
@@ -358,12 +357,43 @@
 			#bodyHome
 			{
 				background-repeat:no-repeat;
-				min-height:611px;
 				background-position: center top;
 				background-repeat: no-repeat;
-				width:320px;
-				margin: 0 auto;	
-				padding: 0;			
+				width:100%;
+				margin: 0 !important;	
+				padding: 0 !important;			
+			}
+			
+			#divisorTop
+			{
+				width:100%;
+				background-image: url('../images/divisorTop.jpg');
+				background-repeat: no-repeat;
+				background-size: 100% 22px;
+				height:22px;
+				margin-top: -6px;
+			}
+			
+			#divisorBottom
+			{
+				width:100%;
+				background-image: url('../images/divisorBottom.jpg');
+				background-repeat: no-repeat;
+				background-size: 100% 30px;
+				height:30px;
+			}
+			
+			#texto
+			{
+				background: url('../images/fondo.jpg');
+			}
+
+
+			#mainImg
+			{
+				height: auto !important;
+				padding: 0 !important;
+				margin: 0 !important;
 			}
 			
 			/*.ui-header

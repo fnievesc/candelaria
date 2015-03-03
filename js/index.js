@@ -177,6 +177,9 @@ $(document).bind('pagechange',function(toPage, options){
         	getMarchas();
         	hideTabsMarchas(null, url);
     	break; 
+    	case 'index.html':
+    		$('#mainImg').attr('style','height:'+$('#mainImg img').height()+"px !important");
+    	break;
     		
     }
 });
