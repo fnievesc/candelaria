@@ -721,7 +721,7 @@ function updatePosInfantil()
 		{
 			posJesusInfantil.setMap(null);
 			posVirgenInfantil.setMap(null);
-			$('#turnoInfo').html("<img src=\"images/recorrido.png\" style=\"height:40px;float:left\"><p style=\"height:40px;padding-left:45px;padding-top: 5px;\">Informaci&oacute;n disponible el 5 de Abril 2014</p>"); 
+			$('#turnoInfo').html("<img src=\"images/recorrido.png\" style=\"height:40px;float:left\"><p style=\"height:40px;padding-left:45px;padding-top: 5px;\">Informaci&oacute;n disponible el d&iacute;a de la procesi&oacute;n</p>"); 
 		}
 	    $.mobile.loading('hide'); 
     }).fail(function(){    
@@ -752,7 +752,7 @@ function updatePos()
 		{
 			posJesus.setMap(null);
 			posVirgen.setMap(null);
-			$('#turnoInfo').html("<img src=\"images/recorrido.png\" style=\"height:40px;float:left\"><p style=\"height:40px;padding-left:45px;padding-top: 5px;\">Informaci&oacute;n disponible el 17 de Abril</p>"); 
+			$('#turnoInfo').html("<img src=\"images/recorrido.png\" style=\"height:40px;float:left\"><p style=\"height:40px;padding-left:45px;padding-top: 5px;\">Informaci&oacute;n disponible el d&iacute;a de la procesi&oacute;n</p>"); 
 		}
 	    $.mobile.loading('hide'); 
     }).fail(function(){    
