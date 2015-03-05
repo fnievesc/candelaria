@@ -409,8 +409,19 @@ function initMapaInfantil()
 	    strokeOpacity: 1.0,
 	    strokeWeight: 2
 	});
+
+    var infantilRutaVuelta = new google.maps.Polyline({
+	    path: recorridoInfantilVuelta,
+	    geodesic: true,
+	    strokeColor: '#0000FF',
+	    strokeOpacity: 1.0,
+	    strokeWeight: 2
+	});
+
 	
 	infantilRuta.setMap(map2);
+	
+	infantilRutaVuelta.setMap(map2);
 	
 	if(posJesusInfantil == null)
 		posJesusInfantil = new google.maps.Marker({
