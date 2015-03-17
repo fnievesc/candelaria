@@ -158,6 +158,7 @@ $(document).bind('pagechange',function(toPage, options){
         	hideTabsJuevesSanto(null, url);
             initMapa();
             programaMarchas();
+            getPuntosReferenciaDesc();
         break;
         case 'procesionInfantil.html':
         	hideTabsJuevesSanto(null,url);
@@ -586,6 +587,21 @@ function initMapa()
             
             map.fitBounds(bounds);
     });
+}
+
+function getPuntosReferenciaDesc()
+{
+	$.mobile.loading('show');
+    $.ajax({url:'http://216.120.237.30/~candelar/movilAPI/refDesc.php',
+            type:'POST',
+            dataType:'jsonp',
+	        crossDomain:true
+		}).done(function(data){
+        	$('#horario').html(data.ref).trigger('create');
+	    	$.mobile.loading('hide'); 
+    	}).fail(function(){alert('error');    
+    		$.mobile.loading('hide'); 
+	});
 }
 
 function makeInfoWindowListener(infowindow, map, marker)
